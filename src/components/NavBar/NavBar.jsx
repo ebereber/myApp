@@ -1,14 +1,12 @@
-import React, {useState} from "react"
+import React from "react"
 import { Link } from "react-router-dom"
 import { MdOutlineShoppingCart } from "react-icons/md"
 import {FaAngleDown} from "react-icons/fa"
-import{FaRegLightbulb} from "react-icons/fa"
-import{FaLightbulb} from "react-icons/fa"
+import{FiMenu} from "react-icons/fi"
 import "./NavBar.css"
 
 function NavBar() {
 
-    const[isMobile, setIsMobile] = useState(false);
     return (
       <nav className="navbar">
         <Link to="/" className="home">
@@ -17,7 +15,7 @@ function NavBar() {
           </h3>
         </Link>
 
-        <ul className={isMobile ? "nav-links-mobile": "nav-links"}>
+        <ul className="nav-links">
           <Link to="/productos" className="productos">
             <li>Productos</li> <FaAngleDown className="angle-down"/>
           </Link>
@@ -31,11 +29,9 @@ function NavBar() {
               <MdOutlineShoppingCart className="carro-logo" />
               <li> Carrito</li>
             </Link>
-       
         </ul>
         <button className="mobile-menu-icon">
-            {isMobile ? <FaRegLightbulb className="bulb-on"/> : <FaLightbulb className="bulb-off"/>}
-
+             <FiMenu className="bulb-on"/> 
         </button>
       </nav>
     );

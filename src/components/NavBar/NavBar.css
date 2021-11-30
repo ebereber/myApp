@@ -5,9 +5,11 @@
     justify-content: space-around;
     align-items: center;
     height: 75px;
+    position: relative;
 }
 .logo {
     color: black;
+    font-weight: 800;
 }
 .logo span{
     opacity: .6;
@@ -15,14 +17,13 @@
 }
 
 .nav-links{
-    display: flex;
+    display: none;
     justify-content: flex-end;
     align-items: center;
     width: 60%;
     list-style: none;
     
 }
-
 
 .home,
 .contacto,
@@ -33,7 +34,7 @@
     color: #000000;
     text-decoration: none;
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 600;
     padding: 10px 20px;
     margin: 0 10px;
     cursor: pointer;
@@ -56,6 +57,9 @@
 .carrito:hover{
     opacity: 0.6;
 }
+.mobile-menu-icon:hover{
+    opacity: 0.4;
+}
 
 
 .carrito{
@@ -73,37 +77,38 @@
 .nosotros{
     display: flex;
     align-items: center;
+    
 }
 
 .angle-down{
     font-size: 15px;
     margin-left: 5px;
-}
+   
+    
+}  
 
 .mobile-menu-icon{
-    display: none;
+border: none;
+background: none;
+color: black;
+font-size: 24px;
+cursor: pointer;
+position: absolute;
+display: block;
+right: 30px;
+top: 20px;
+padding: 5px;
 }
- 
-@media screen and(max-width:860px){
-    .logo{
-        display: flex;
-        position: absolute;
-        top: 15px;
-        left: 35px;
 
+
+@media screen and (min-width:860px){
+    .mobile-menu-icon{
+        display: none;
     }
+    .nav-links{
+        display: flex;
+    
 }
 
-.nav-links-mobile{
-    position: absolute;
-    display: block;
-    list-style: none;
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 4px 10px rgb(0 0 0 / 8%);
-    left: 0;
-    top: 75px;
-    transition: all 0.5s ease-out;
-    width: 100%;
-    
 }
-    
+
