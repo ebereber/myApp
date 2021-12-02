@@ -4,6 +4,7 @@ import { MdOutlineShoppingCart } from "react-icons/md"
 import {FaAngleDown} from "react-icons/fa"
 import{FiMenu} from "react-icons/fi"
 import "./NavBar.css"
+import CartWidget from "./CartWidget"
 
 function NavBar() {
 
@@ -25,8 +26,8 @@ function NavBar() {
           <Link to="/contacto" className="contacto">
             <li>Contacto</li>
           </Link>
-            <Link to="/carrito" className="carrito">
-              <MdOutlineShoppingCart className="carro-logo" />
+          <Link to="/carrito" className="carrito">
+              <CartWidget/>
               <li> Carrito</li>
             </Link>
         </ul>
