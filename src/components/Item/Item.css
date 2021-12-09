@@ -1,0 +1,49 @@
+
+.item-card{
+width: 300px;
+margin: 30px;
+box-shadow: 0 4px 10px rgb(0 0 0 / 8%);
+border-radius: 6px;
+cursor: pointer;
+transition: ease all 0.3s;
+
+}
+
+.item-card :hover{
+    opacity: 0.6;
+}
+
+.item-photo{
+height: 250px;
+position: relative;
+}
+
+.item-photo img{
+    width: 100%;
+    height: 100%;
+}
+
+.heart-button{
+    position: absolute;
+    top: 7%;
+    right: 8%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: ease all 0.3s;
+}
+.heart-button :hover{
+    opacity: 0.6;
+    
+}
+
+.item-price{
+    position: absolute;
+    right: 75%;
+    bottom: 0;
+    font-size: 15px;
+}
+
+.item-detail{
+font-size: 15px;
+font-weight: 200;
+}
