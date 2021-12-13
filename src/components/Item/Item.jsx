@@ -1,6 +1,8 @@
 import React from 'react'
 import "./Item.css"
 import {AiOutlineHeart} from "react-icons/ai"
+
+
 function Item({product}) {
     return (
       <section key={product.id} className="item-card">
