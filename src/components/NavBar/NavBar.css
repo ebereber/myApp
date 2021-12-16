@@ -101,6 +101,41 @@ padding: 5px;
 }
 
 
+.productos{
+    position: relative;
+    
+}
+.productos ul{
+    margin-top: 30px;
+    position:absolute;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 0.4s;
+    width: 150px;
+    height: 300px;
+    box-shadow: 0 4px 9px 0 rgb(67 65 79 / 10%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    right: 3px;
+    
+    
+}
+
+.productos ul .drop{
+    text-decoration: none;
+    color: black;
+}
+
+.productos:hover ul{
+    max-height: 200px;
+}
+
+
+
+
 @media screen and (min-width:860px){
     .mobile-menu-icon{
         display: none;

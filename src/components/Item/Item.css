@@ -6,6 +6,7 @@ box-shadow: 0 4px 10px rgb(0 0 0 / 8%);
 border-radius: 6px;
 cursor: pointer;
 transition: ease all 0.3s;
+z-index: -2;
 
 }
 
