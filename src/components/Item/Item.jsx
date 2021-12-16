@@ -13,6 +13,7 @@ function Item({product}) {
             <div className="item-price">{product.price}</div>
         </div>
         <div className="item-detail">{product.title}</div>
+        <div className="item-category">{product.description}</div>
       </section>
     );
 }
