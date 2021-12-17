@@ -10,10 +10,10 @@ function ItemDetail({product}) {
                 <img src={product.pictureUrl} alt="" />
             </div>
             <div className="producto">
-                <p>{product.model}</p>
+                <p>{product.description}</p>
                 <h1>{product.title}</h1>
                 <p>{product.price}</p>
-             <p>{product.description}</p>
+             <p>{product.detail}</p>
                 <div className="item-count">
                 <ItemCount/>
                 </div>

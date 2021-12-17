@@ -30,7 +30,7 @@ function App() {
             />
           <Route 
             exact
-            path="cart" 
+            path="detalle" 
             element={<ItemCount />}
             />
           

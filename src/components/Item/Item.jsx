@@ -17,7 +17,7 @@ function Item({product}) {
         <div className="item-detail">{product.title}</div>
         <div className="item-category">{product.description}</div>
         <Link to={`/detalle/${product.id}`}>
-          <button>Detalle</button>
+          <button className='button-detail'>Detalle</button>
         </Link>
       </section>
     );
