@@ -25,12 +25,12 @@ function App() {
             />
           <Route 
             exact
-            path="detalle" 
+            path="/detalle/:id" 
             element={<ItemDetailContainer />}
             />
           <Route 
             exact
-            path="detalle" 
+            path="cart" 
             element={<ItemCount />}
             />
           

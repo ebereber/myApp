@@ -1,10 +1,12 @@
 import React from 'react'
 import "./Item.css"
 import {AiOutlineHeart} from "react-icons/ai"
+import { Link } from 'react-router-dom';
 
 
 function Item({product}) {
     return (
+
       <section key={product.id} className="item-card">
 
         <div className="item-photo">
@@ -14,6 +16,9 @@ function Item({product}) {
         </div>
         <div className="item-detail">{product.title}</div>
         <div className="item-category">{product.description}</div>
+        <Link to={`/detalle/${product.id}`}>
+          <button>Detalle</button>
+        </Link>
       </section>
     );
 }
