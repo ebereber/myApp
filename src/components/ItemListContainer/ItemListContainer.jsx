@@ -19,7 +19,7 @@ function ItemListContainer(props) {
 
     if (idCategoria) {
         getFetch
-        .then(dataRes => setProduct(dataRes.filter(prod => prod.description === idCategoria)))
+        .then(dataRes => setProduct(dataRes.filter(products => products.description === idCategoria)))
         .catch(err => console.log(err))
         .finally(()=> setLoading(false))
     } else {

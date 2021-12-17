@@ -4,22 +4,25 @@ import "../ItemDetailContainer/ItemDetail.css"
 
 function ItemDetail({product}) {
 
+
     return (
-        <div className="container">
-            <div className='images'>
+      
+            <div className="container">
+            <div className="images">
                 <img src={product.pictureUrl} alt="" />
             </div>
             <div className="producto">
                 <p>{product.description}</p>
                 <h1>{product.title}</h1>
                 <p>{product.price}</p>
-             <p>{product.detail}</p>
+                <p>{product.detail}</p>
                 <div className="item-count">
-                <ItemCount/>
+                <ItemCount />
                 </div>
             </div>
-        </div>
-    )
+            </div>
+      
+    );
 }
 
 export default ItemDetail
