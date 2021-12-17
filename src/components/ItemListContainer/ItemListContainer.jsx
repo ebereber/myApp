@@ -9,39 +9,24 @@ import ItemList from '../ItemList/ItemList';
 function ItemListContainer(props) {
 
     const [products, setProduct] = useState([]);
-    const [loading, setLoading] = useState(true)
-
     const { idCategoria } = useParams()
 
-    
-
   useEffect(() => {
-
-    if (idCategoria) {
         getFetch
-        .then(dataRes => setProduct(dataRes.filter(products => products.description === idCategoria)))
-        .catch(err => console.log(err))
-        .finally(()=> setLoading(false))
-    } else {
-        getFetch
-    .then(dataRes => setProduct(dataRes))
-    .catch(err => console.log(err))
-    .finally(()=> setLoading(false))
-    }
-    
-    
-
+        .then(dataRes => {
+            let data = idCategoria
+            ? dataRes.filter(products => products.description === idCategoria)
+            :dataRes;
+            setProduct(data)
+    })
 }, [idCategoria])
     
 
     return (
         <div className="item-container">
     
-            {loading ? 
-            <h4>Cargando...</h4> 
-            : 
             <ItemList  products={products}/>
-            }
+            
         </div>
     )
 }
