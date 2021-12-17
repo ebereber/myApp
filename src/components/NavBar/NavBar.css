@@ -6,6 +6,7 @@
     align-items: center;
     height: 75px;
     position: relative;
+    z-index: 1;
 }
 .logo {
     color: black;
@@ -45,9 +46,9 @@
 .home:hover{
     opacity: 0.6;
 }
-.productos:hover{
+/* .productos:hover{
     opacity: 0.6;
-}
+} */
 .nosotros:hover{
     opacity: 0.6;
 }
@@ -120,6 +121,7 @@ padding: 5px;
     justify-content: space-around;
     list-style: none;
     right: 3px;
+    background: #fff;
     
     
 }

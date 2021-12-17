@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 function Item({product}) {
     return (
-
+      <div className='card-container'>
       <section key={product.id} className="item-card">
 
         <div className="item-photo">
@@ -20,6 +20,7 @@ function Item({product}) {
           <button className='button-detail'>Detalle</button>
         </Link>
       </section>
+      </div>
     );
 }
 
