@@ -3,10 +3,10 @@ import "./ItemCount.css"
 import {FiPlus} from "react-icons/fi"
 import {FiMinus} from "react-icons/fi"
 
-function ItemCount() {
+function ItemCount({stock, onAdd}) {
 
     const inicial = 1;
-    const max = 8;
+    // const max = 8;
 
     const [count, setCount] = useState(inicial);
 
@@ -15,7 +15,7 @@ function ItemCount() {
 }
 
     const incrementCount = () =>{
-        count < max && setCount(prev => prev + 1)
+        count < stock && setCount(prev => prev + 1)
 }
 
   return (
@@ -28,7 +28,7 @@ function ItemCount() {
         <button onClick={incrementCount} className="increment"><FiPlus/></button>
       </div>
       <br />
-        <button className="addCart">Añadir al carrito</button>
+        <button onClick={()=> onAdd(count)} className="addCart">Añadir al carrito</button>
     </div>
   );
 }
