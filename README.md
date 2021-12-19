@@ -1,5 +1,5 @@
-# Proyecto Eccomerce :computer:
-Eccomerce desarrollado en React como proyecto final para el curso de CoderHouse.
+# Proyecto e-commerce :computer:
+E-commerce desarrollado en React como proyecto final para el curso de CoderHouse.
 
 ### Navegacion
 - Home con productos
