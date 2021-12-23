@@ -1,18 +1,23 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react/cjs/react.development'
+import { useCartContext } from '../../Context/CartContext'
 import ItemCount from '../ItemCount/ItemCount'
 import "../ItemDetailContainer/ItemDetail.css"
 
 function ItemDetail({product}) {
 
+    
+
     const[cart, setCart]=useState(false)
+    const{cartList,addToCart} = useCartContext()
 
     const onAdd= quantityToAdd =>{
         console.log(quantityToAdd)
         setCart(true)
+        addToCart({...product,quantity:quantityToAdd})
     }
-
+console.log(cartList);
     return (
       <div className="container">
         <div className="images">
