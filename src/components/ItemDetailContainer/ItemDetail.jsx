@@ -17,7 +17,6 @@ function ItemDetail({product}) {
         setCart(true)
         addToCart({...product,quantity:quantityToAdd})
     }
-console.log(cartList);
     return (
       <div className="container">
         <div className="images">
@@ -26,7 +25,7 @@ console.log(cartList);
         <div className="producto">
           <p>{product.description}</p>
           <h1>{product.title}</h1>
-          <p>{product.price}</p>
+          <p>${product.price}</p>
           <p>{product.detail}</p>
           {!cart ? (
             <div className="item-count">

@@ -106,6 +106,49 @@ position: relative;
     opacity: 0.6;
 }
 
+.removeItem{
+  display: flex;
+  align-items: center;
+}
+
+.removeItem .trash{
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition:0.4s;
+}
+.removeItem:hover{
+    opacity: 0.6;
+}
+
+.alert{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 50vh;
+}
+.alert p{
+    font-size: 1rem;
+}
+.alert .btn {
+
+    cursor: pointer;
+    margin-top: 10px;
+    color: black;
+    transition:0.6s;
+}
+.btn:hover{
+    opacity: 0.3;
+}
+
+.total-price{
+    margin: 30px;
+    font-size: 16px;
+}
+
+
+
 @media screen and(min-width:900px) {
 
     .item-det{
@@ -130,3 +173,4 @@ position: relative;
 .cart-product{
     display: grid;
 } */
+

@@ -31,7 +31,9 @@ function App() {
                 path="/detalle/:id"
                 element={<ItemDetailContainer />}
               />
-              <Route exact path="/carrito" element={<Carrito />} />
+              <Route exact
+               path="/carrito"
+              element={<Carrito />} />
             </Routes>
           </>
         </BrowserRouter>

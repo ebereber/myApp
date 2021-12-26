@@ -5,21 +5,29 @@ import "./ItemDetailContainer.css"
 import ItemDetail from './ItemDetail'
 
 function ItemDetailContainer() {
+
 const [product, setProduct] = useState([])
 const {id} = useParams()
+const [loading, setLoading] = useState(true)
 
 useEffect(()=>{
     getFetch
         .then(data => setProduct(data.find((product) => product.id === +id)))
         .catch(err => console.log(err))
-        
+        .finally(()=>setLoading(false))
 },[id])
 
     return (
       <>
-        <div className="container-item">
+        { loading ?
+
+        <h3>cargando...</h3>
+        :
+          <div className="container-item">
+            
           <ItemDetail product={product} />
-        </div>
+        </div> 
+        }
       </>
     );
 }

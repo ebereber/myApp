@@ -32,6 +32,18 @@ cantidad de el oldItem*/
 }
 }
 
+/* function removeItem (){
+
+} */
+
+const removeItem =(id)=>{
+    if (cartList.length > 0) {
+        const updateItems = cartList.filter((item)=>{
+            return item.id !== id;
+        });
+        setCartList(updateItems);
+    }
+}
 
         function deleteCart (){
             setCartList([])
@@ -39,7 +51,10 @@ cantidad de el oldItem*/
 
         return (
         <CartContext.Provider value={{
-            cartList, addToCart, deleteCart
+            cartList, 
+            addToCart, 
+            deleteCart,
+            removeItem
             }}>
             {children}
         </CartContext.Provider>
