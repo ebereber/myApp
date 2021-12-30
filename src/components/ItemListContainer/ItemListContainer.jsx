@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 import {useParams} from "react-router-dom"
 import "./ItemListContainer.css"
-import { getFetch } from '../../Helpers/getFetch'
+// import { getFetch } from '../../Helpers/getFetch'
 import ItemList from '../ItemList/ItemList';
 import {collection,doc, getDoc, getDocs, getFirestore, query, where} from "firebase/firestore"
 import { css } from "@emotion/react";
@@ -49,7 +49,8 @@ function ItemListContainer(props) {
 
         const queryCollection =  query(
         collection(db, 'items'), 
-        where('description','==', idCategoria ))
+        // where('description','==', idCategoria))
+        where('description','==', "Veladores"))
         // where('stock','>', 3 ))
         getDocs(queryCollection)
         .then(resp => setProducts( resp.docs.map(prod => ({ id: prod.id, ...prod.data() }) ) )  )
