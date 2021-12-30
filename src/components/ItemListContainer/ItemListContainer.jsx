@@ -3,22 +3,26 @@ import {useParams} from "react-router-dom"
 import "./ItemListContainer.css"
 import { getFetch } from '../../Helpers/getFetch'
 import ItemList from '../ItemList/ItemList';
-import {doc, getDoc, getFirestore} from "firebase/firestore"
+import {collection,doc, getDoc, getDocs, getFirestore, query, where} from "firebase/firestore"
 import { css } from "@emotion/react";
 import PropagateLoader from "react-spinners/PropagateLoader";
+import Hero from "../Hero/Hero";
 
 const override = css`
   display: block;
   margin: 0 auto;
 `;
 
+
+
 function ItemListContainer(props) {
 
-    const [products, setProduct] = useState([]);
+    const [products, setProducts] = useState({});
     const { idCategoria } = useParams()
     const [loading, setLoading]= useState(true)
+   
     
-  useEffect(() => {
+/*    useEffect(() => {
         getFetch
         .then(dataRes => {
             let data = idCategoria
@@ -28,21 +32,37 @@ function ItemListContainer(props) {
             
     })
     .finally(()=>setLoading(false))  
-}, [idCategoria])
+}, [idCategoria])  */
 
-//   useEffect(() => {
-//         const db = getFirestore()
-//         const queryDb = doc(db, "items","hcNeOt5z4oGwmBvTc2b9" )
-//         getDoc(queryDb)
-//         .then(dataRes => console.log(dataRes))
-//     })
-// }, [idCategoria])
+
+/* useEffect(() => {
+        const db = getFirestore()
+        const queryDb = doc(db, 'items', 'NUhHPift9uPbTPtmZlQg')
+        getDoc(queryDb)
+        .then(resp => setProducto( { id: resp.id, ...resp.data() } ))
+
+    }, [idCategoria]) */
+
+     useEffect(() => {
+
+        const db = getFirestore()
+
+        const queryCollection =  query(
+        collection(db, 'items'), 
+        where('description','==', idCategoria ))
+        // where('stock','>', 3 ))
+        getDocs(queryCollection)
+        .then(resp => setProducts( resp.docs.map(prod => ({ id: prod.id, ...prod.data() }) ) )  )
+        .catch(err => console.log(err))
+        .finally(()=> setLoading(false))
+    }, [idCategoria])  
     
+    
+
 
     return (
         <div className="item-container">
     
-           
             {   loading ?
             <div className="sweet-loading">
                 <PropagateLoader 
@@ -52,8 +72,11 @@ function ItemListContainer(props) {
                     size={15} />
             </div>  
             :  
+            <>
+             <Hero/>
                 <ItemList  
                     products={products}/>
+                    </>
             }            
         </div>
     )

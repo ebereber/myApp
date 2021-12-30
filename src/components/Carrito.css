@@ -6,6 +6,7 @@ li {
 }
 .cart-container{
     margin: 30px;
+    
 }
 .cart-container p{
 margin-left: 20px;
@@ -135,8 +136,9 @@ position: relative;
 
     cursor: pointer;
     margin-top: 10px;
-    color: black;
+    color: #343A40;
     transition:0.6s;
+    position: relative;
 }
 .btn:hover{
     opacity: 0.3;

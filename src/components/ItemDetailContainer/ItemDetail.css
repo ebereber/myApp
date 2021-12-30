@@ -1,17 +1,91 @@
 
+.center-div{
+width: 70%;
+}
 
-.container {
-    position: relative;
-    margin: auto;
-    overflow: hidden;
-    width: 520px;
-    height: 350px;
-    background: #fff;
-    box-shadow: 0 4px 10px rgb(0 0 0 / 8%);
-    border-radius: 10px;
-  }
+.left-wrap{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
   
-  p {
+}
+.right-wrap{
+  width: 50%;
+  background: #F8F9FA;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-detalle{
+  width: 70%;
+  height: auto;
+}
+
+.small-pictures{
+  display: flex;
+  justify-content: center;
+}
+.picture{
+  width: 17%;
+  height: auto;
+  border-radius: 10px;
+  margin: 0px 10px 0 0;
+  cursor: pointer;
+}
+
+.p-product {
+  letter-spacing: 1.5px;
+  color: #000;
+}
+.precio{
+  font-size: 18px;
+  margin-top:30px;
+}
+
+.detalle{
+  margin-top: 20px;
+  width: 100%;
+  font-size: 14px;
+}
+.p-product-description{
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: #495057;
+  font-size: 14px;
+
+}
+
+.btnCart{
+    padding: 10px;
+    width: 190px;
+    height: 40px;
+    color: #000;
+    background: #fff;
+    border: none;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.4s;
+    margin-top: 80px;
+}
+.btnCart:hover {
+    background: rgb(46, 46, 46);
+    color: white;
+  }
+
+
+
+/* 
+
+.
+  
+  .p-product{
     font-size: 0.7em;
     color: #000;
     letter-spacing: 1px;
@@ -21,14 +95,14 @@
     font-size: 1.5em;
     color: black;
     margin-top: -5px;
-  }
+  } */
   
-  img {
+  /* img {
     width: 290px;
     margin-top: 47px;
-  }
+  } */
 
-  .producto {
+  /* .producto {
     position: absolute;
     width: 40%;
     height: 100%;
@@ -49,22 +123,12 @@
     line-height: 1.6em;
     margin-right: 25px;
     text-align: justify;
-  }
+  } */
   
-  .item-count{
+  /* .item-count{
       
       position: absolute;
       top: 0%;
   }
-  .btnCart{
-    width: 190px;
-    height: 40px;
-    color: #fff;
-    background: #000;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.4s;
-    margin-bottom: 10px;
-  }
+   */
   
