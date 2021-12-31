@@ -70,7 +70,7 @@ function Carrito() {
       :
       <div className="alert" >
 	  <p> Todavía no agregaste productos al carrito.</p>
-      <Link className="btn" to="/">Comprar productos</Link>
+      <Link className="btn" to="/"><h3>Comprar productos</h3></Link>
 	    </div>
      
     );

@@ -1,4 +1,7 @@
-li {
+
+
+
+ li {
     list-style: none;
 }
 .product{
@@ -158,7 +161,7 @@ position: relative;
         background: red;
     }
     
-}
+} 
 
 /**********---------------------*************/
 

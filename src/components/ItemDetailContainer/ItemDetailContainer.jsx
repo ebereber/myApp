@@ -1,8 +1,8 @@
 import {useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
-import {getFetch} from "../../Helpers/getFetch"
+
 import "./ItemDetailContainer.css"
-import {collection,doc, getDoc, getDocs, getFirestore, query, where} from "firebase/firestore"
+import {doc, getDoc, getFirestore} from "firebase/firestore"
 import ItemDetail from './ItemDetail'
 
 function ItemDetailContainer() {

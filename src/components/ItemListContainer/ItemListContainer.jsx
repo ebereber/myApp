@@ -1,12 +1,12 @@
 import {useState, useEffect} from 'react'
 import {useParams} from "react-router-dom"
 import "./ItemListContainer.css"
-// import { getFetch } from '../../Helpers/getFetch'
 import ItemList from '../ItemList/ItemList';
-import {collection,doc, getDoc, getDocs, getFirestore, query, where} from "firebase/firestore"
+import {collection, getDocs, getFirestore, query, where} from "firebase/firestore"
 import { css } from "@emotion/react";
 import PropagateLoader from "react-spinners/PropagateLoader";
 import Hero from "../Hero/Hero";
+
 
 const override = css`
   display: block;
@@ -34,7 +34,6 @@ function ItemListContainer(props) {
     .finally(()=>setLoading(false))  
 }, [idCategoria])  */
 
-
 /* useEffect(() => {
         const db = getFirestore()
         const queryDb = doc(db, 'items', 'NUhHPift9uPbTPtmZlQg')
@@ -43,21 +42,37 @@ function ItemListContainer(props) {
 
     }, [idCategoria]) */
 
-     useEffect(() => {
+    /*  useEffect(() => {
 
         const db = getFirestore()
-
+         
         const queryCollection =  query(
         collection(db, 'items'), 
-        // where('description','==', idCategoria))
-        where('description','==', "Veladores"))
-        // where('stock','>', 3 ))
+        where('description','==', "veladores"))
         getDocs(queryCollection)
-        .then(resp => setProducts( resp.docs.map(prod => ({ id: prod.id, ...prod.data() }) ) )  )
+        .then( resp => setProducts( resp.docs.map(prod => ({ id: prod.id, ...prod.data() }) ) )  )
         .catch(err => console.log(err))
         .finally(()=> setLoading(false))
-    }, [idCategoria])  
+    }, [idCategoria])  */ 
     
+     useEffect(() => {
+        const db = getFirestore()
+        const queryCollection =  collection(db, 'items')
+
+       let data = idCategoria
+       ? query(queryCollection, 
+        where("description", "==", idCategoria))
+       :queryCollection
+        getDocs(data)
+        .then((collection)=>{
+            const produ = collection.docs.map (prod => ({ id: prod.id, ...prod.data() 
+            }) )
+            setProducts(produ)
+        })
+        .finally(()=> setLoading(false))
+        
+    }, [idCategoria]) 
+
     
 
 
