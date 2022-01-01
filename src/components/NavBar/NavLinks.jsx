@@ -24,7 +24,7 @@ export default function NavLinks() {
           <FaAngleDown className="angle-down" />
         </div>
         <Link to="/nosotros" className="nosotros">
-          <li>Nosotros</li> <FaAngleDown className="angle-down" />
+          <li>Nosotros</li>
         </Link>
         <Link to="/contacto" className="contacto">
           <li>Contacto</li>

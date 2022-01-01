@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import{FiMenu} from "react-icons/fi"
 import "./NavBar.css"
+import CartWidget from "./CartWidget"
 import NavLinks from "./NavLinks";
 
 
@@ -16,9 +17,10 @@ function NavBar() {
         </Link>
         <NavLinks/>
        
-        <button className="mobile-menu-icon">
+        <div className="mobile-menu-icon">
+        <CartWidget />
              <FiMenu className="bulb-on"/> 
-        </button>
+        </div>
       </nav>
     );
 }
