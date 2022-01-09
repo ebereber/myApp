@@ -34,7 +34,7 @@ function App() {
                 element={<ItemDetailContainer />}
               />
               <Route exact
-               path="/carrito"
+               path="/carrito/"
               element={<Carrito />} />
             </Routes>
           </>

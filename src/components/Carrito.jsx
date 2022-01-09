@@ -3,10 +3,16 @@ import {useState, useEffect} from "react"
 import{Link} from "react-router-dom"
 import "./Carrito.css"
 import {FiTrash2} from "react-icons/fi"
+import{GiShoppingCart} from "react-icons/gi"
+import CartUnits from "./NavBar/CartUnits";
+import ItemCount from "./ItemCount/ItemCount";
 
 
-function Carrito() {
 
+function Carrito({product}) {
+
+  
+  
     const { cartList, deleteCart, removeItem } = useCartContext()
     const[ totalPrice, setTotalPrice] = useState(0)
 
@@ -25,54 +31,62 @@ function Carrito() {
 
     
 
-    return (
-        	
-            cartList.length > 0 ?
+    return cartList.length > 0 ? (
       <div className="cart-container">
-            <h2>Carrito</h2>
-            <hr />
-            <li className="list">
-            <p>DETALLE</p>
-            <div>
-                <p>CANTIDAD</p>
-                <p className="precio">PRECIO</p>
+        <div className="header">
+          <h2 className="title-cart"> Carrito</h2>
+          <h5 className="delete-cart" onClick={deleteCart}>
+            Vaciar Carrito
+          </h5>
+        </div>
+
+        {cartList.map((item) => (
+          <li key={item.id} className="productli">
+            <img className="img-product" src={item.pictureUrl} alt="" />
+
+            <div className="title-detail">
+              <h4 className="title-item">{item.title}</h4>
+              <p className="sub-item">{item.detail}</p>
             </div>
-            </li>
-            {cartList.map((item) => (
-            <li key={item.id} className="product">
-                <div className="item-det">
-                <div className="img">
-                    <img src={item.pictureUrl} alt="" />
-                </div>
-                <div className="title-detail">
-                    <h4 className="titulo">{item.title}</h4>
-                    <p>{item.detail}</p>
-                </div>
-                <div className="list-detalle">
-                    <div className="quantity">
-                    <p>{item.quantity}</p>
-                    </div>
-                     <div className="price">
-                        <p className="">${item.price}</p>
-                    </div>
-                    <div className="removeItem">
-                        <FiTrash2 className="trash" onClick={() => removeItem(item.id)}/>
-                     </div>
-                </div>
+           {/*  <ItemCount/> */}
+            <p className="item-quantity">{item.quantity}</p>
+
+            <p className="amount">${item.price}</p>
+            <div className="removeItem">
+              <FiTrash2 className="trash" onClick={() => removeItem(item.id)} />
             </div>
           </li>
         ))}
-        <h5 className="total-price">Total: ${totalPrice}</h5>
-        <button className="delete-cart" onClick={deleteCart}>
-          Vaciar Carrito
-        </button>
+        <hr />
+
+        <div className="checkout">
+        <div className="total">
+        <div>
+        <div className="Subtotal">Sub-Total</div>
+        <div className="units-items">
+            <CartUnits/> 
+            <p className="p-units"> unidades</p>
+        </div>
+        </div>
+        <div className="total-amount">${totalPrice}</div>
+        </div>
+        
+        </div>
+
+
+
       </div>
-      :
-      <div className="alert" >
-	  <p> Todavía no agregaste productos al carrito.</p>
-      <Link className="btn" to="/"><h3>Comprar productos</h3></Link>
-	    </div>
-     
+    ) : (
+      <div className="cajadiv">
+        <div className="alert">
+          <GiShoppingCart className="empty-cart" width="2em" height="2em" />
+          <p> Todavía no agregaste productos al carrito.</p>
+          <p className="sub-cart">Cuando lo hagas, podrás verlos acá.</p>
+          <Link className="btn" to="/">
+            <h3>Comprar productos</h3>
+          </Link>
+        </div>
+      </div>
     );
 }
 

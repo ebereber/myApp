@@ -4,23 +4,31 @@ import{FiMenu} from "react-icons/fi"
 import "./NavBar.css"
 import CartWidget from "./CartWidget"
 import NavLinks from "./NavLinks";
+import {FiX} from "react-icons/fi"
+
 
 
 function NavBar() {
 
     return (
       <nav className="navbar">
+        <input type="checkbox" id="check"/>
+        <label for="check">
+          <FiX  id="bulb-on"/> 
+          <FiMenu id="bulb-off"/>
+        </label>
         <Link to="/" className="home">
           <h3 className="logo">
             Lemar <span> Electricidad</span>
           </h3>
         </Link>
-        <NavLinks/>
-       
-        <div className="mobile-menu-icon">
-        <CartWidget />
-             <FiMenu className="bulb-on"/> 
-        </div>
+        <NavLinks/> 
+
+        <Link to="/carrito" className="carrito">
+          <CartWidget />
+        </Link>
+        {/* <div className="mobile-menu-icon"> 
+        </div> */}
       </nav>
     );
 }

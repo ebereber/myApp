@@ -5,10 +5,11 @@ import { Link } from "react-router-dom"
 
 export default function NavLinks() {
     return (
+        
       <ul className="nav-links">
         <div className="productos">
-          <li>
-            Productos
+          <li className='lista'>
+            <p className='hover-lista'>Productos</p>
             <ul>
               <Link to="/productos/colgantes" className="drop">
                 <li>Colgantes</li>
@@ -21,18 +22,15 @@ export default function NavLinks() {
               </Link>
             </ul>
           </li>
-          <FaAngleDown className="angle-down" />
+          
         </div>
         <Link to="/nosotros" className="nosotros">
-          <li>Nosotros</li>
+          <li className='lista'> <p className='hover-lista'>Nosotros</p> </li>
         </Link>
         <Link to="/contacto" className="contacto">
-          <li>Contacto</li>
+          <li className='lista'><p className='hover-lista'>Contacto</p> </li>
         </Link>
-        <Link to="/carrito" className="carrito">
-          <CartWidget />
-          <li> Carrito</li>
-        </Link>
+        
       </ul>
     );
 }

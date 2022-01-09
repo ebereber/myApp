@@ -27,12 +27,6 @@ function ItemDetail({product}) {
       <>
         <div className="left-wrap">
           <img className='img-detalle' src={product.pictureUrl} alt="" />
-          {/* <div className='small-pictures'>
-            <img className='picture' src={product.pictureUrl2}  alt="" />
-            <img className='picture' src={product.pictureUrl3}  alt="" />
-            <img className='picture' src={product.pictureUrl4}  alt="" />
-            <img className='picture' src={product.pictureUrl5}  alt="" />
-          </div> */}
         </div>
 
         <div className="right-wrap">

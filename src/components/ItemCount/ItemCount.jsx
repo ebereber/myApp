@@ -1,9 +1,13 @@
 import React,{useState} from 'react'
+import { useParams } from 'react-router-dom'
 import "./ItemCount.css"
 import {FiPlus} from "react-icons/fi"
 import {FiMinus} from "react-icons/fi"
 
+
 function ItemCount({stock, onAdd}) {
+
+  const { idCategoria } = useParams()
 
     const inicial = 1;
     // const max = 8;
@@ -20,7 +24,6 @@ function ItemCount({stock, onAdd}) {
 
   return (
     <div className="counter">
-    
       <br />
       <div className="buttons">
         <button onClick={decrementCount} className="decrement"><FiMinus/></button>

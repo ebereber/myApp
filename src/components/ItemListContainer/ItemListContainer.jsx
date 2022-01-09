@@ -20,7 +20,6 @@ function ItemListContainer(props) {
     const [products, setProducts] = useState({});
     const { idCategoria } = useParams()
     const [loading, setLoading]= useState(true)
-   
     
 /*    useEffect(() => {
         getFetch
@@ -74,6 +73,7 @@ function ItemListContainer(props) {
     }, [idCategoria]) 
 
     
+    
 
 
     return (
@@ -82,16 +82,24 @@ function ItemListContainer(props) {
             {   loading ?
             <div className="sweet-loading">
                 <PropagateLoader 
-                    color=" gray" 
+                    color="black" 
                     loading={loading} 
                     css={override} 
                     size={15} />
             </div>  
             :  
             <>
-             <Hero/>
-                <ItemList  
-                    products={products}/>
+            { undefined == idCategoria 
+                ? 
+                <>
+                <Hero/>
+                <ItemList products={products}/>  
+                </>
+                :
+                    <>
+                    <ItemList  
+                    products={products}/></> }
+             
                     </>
             }            
         </div>

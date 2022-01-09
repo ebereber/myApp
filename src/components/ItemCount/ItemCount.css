@@ -28,7 +28,7 @@
 .increment
 {
     color: #000;
-    background: white;
+    background: rgb(199, 196, 196);
     border-radius: 50%;
     width: 25px;
     height: 25px;
@@ -57,7 +57,7 @@
     width: 190px;
     height: 40px;
     color: #000;
-    background: #fff;
+    background: rgb(199, 196, 196);
     border: none;
     border-radius: 8px;
     letter-spacing: 1px;
