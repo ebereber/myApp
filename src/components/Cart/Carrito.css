@@ -3,8 +3,8 @@ body{
     height: 100vh;
 }
 .cart-container{
-    margin: 100px 30px 10px 30px;
-   height: 200px;
+    padding: 2rem;
+   height: 400px;
    position: relative;
 }
 
@@ -23,13 +23,15 @@ body{
 }
 
 .delete-cart{
-   font-size: 14px;
-   color: #575f8c;
+   font-size: 12px;
+   font-weight: 400;
+   color: rgba(0,0,0,.31);
     cursor: pointer;
-    transition: 0.4s;
+    border-bottom: 1px solid rgba(0,0,0,.11);
+    transition: all .15s ease;
 }
 .delete-cart:hover{
-    opacity: 0.6;
+    opacity: .5;
 }
 
 
@@ -68,7 +70,7 @@ body{
 
 .sub-item{
     line-height: 10px;
-    font-size: 14px;
+    font-size: 10px;
     color: #414141;
 }
 
@@ -100,14 +102,17 @@ hr {
 
 
 .checkout{
-    float: right;
-    margin-right: 5%;
-    width: 28%;
+    display: inline-block;
+    
+    width: 100%;
+
    }
    .total{
-    width: 100%;
+    width: 28%;
     display: flex;
     justify-content: space-between;
+    float: right;
+    margin-right: 5%;
    }
    .Subtotal{
     font-size: 20px;
@@ -173,6 +178,29 @@ hr {
     margin-top: 10px;
 }
 
+.btn-purchase{ 
+    display: block;
+    float: right;
+    width: 28%;
+          padding: 1rem 1rem;
+          background-color: #000;
+          cursor: pointer;
+          outline: none;
+          border: none;
+          color: #fff;
+          transition: .3s;
+          margin-right: 5%;
+          margin-top: 10px;
+          margin-bottom: 30px;
+          transition: all 450ms ease;
+         
+          
+         
+      }
+      .btn-purchase:hover{
+      background-color: rgb(46, 45, 45);
+      }
+
 
 @media screen and(min-width:900px) {
 
@@ -183,19 +211,8 @@ hr {
     
 } 
 
+
+
+
 /**********---------------------*************/
-
-/* .product-cart{
-    margin-top: 3rem;
-    padding: 1rem;
-}
-
-.cart-item .cart{
-    display: grid;
-    grid-template-columns: 100%;
-}
-
-.cart-product{
-    display: grid;
-} */
 

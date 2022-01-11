@@ -13,7 +13,7 @@ function NavBar() {
     return (
       <nav className="navbar">
         <input type="checkbox" id="check"/>
-        <label for="check">
+        <label htmlFor="check">
           <FiX  id="bulb-on"/> 
           <FiMenu id="bulb-off"/>
         </label>

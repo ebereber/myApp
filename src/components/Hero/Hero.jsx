@@ -17,6 +17,7 @@ function Hero() {
             </div>
             
             <div className="hero-rigth">
+                
                     <img src="https://homekitnews.com/wp-content/uploads/2019/01/Mi-desk-lamp-pro-fi.jpg" alt="" />
                 
             </div>

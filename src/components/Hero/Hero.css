@@ -1,5 +1,5 @@
 .hero-container{
-    margin: 30px auto 40px;
+    /* margin: 30px auto 40px; */
     width: 85%;
     height: 350px;
     border-radius: 10px;
@@ -80,7 +80,7 @@ border-radius: 10px;
 
 @media screen and (max-width: 860px){ 
     .hero-container{
-        margin-left: 30%;
+        margin-left: 7%;
         width: 50%;
         height: 500px;
         border-radius: 10px;

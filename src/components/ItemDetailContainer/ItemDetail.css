@@ -62,18 +62,18 @@ width: 70%;
 }
 
 .btnCart{
-    padding: 10px;
-    width: 190px;
-    height: 40px;
-    color: #000;
-    background: #fff;
-    border: none;
-    border-radius: 8px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: 0.4s;
-    margin-top: 80px;
+  width: 40%;
+  padding: 1rem 1rem;
+  background-color: #000;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: #fff;
+  transition: .3s;
+  margin-right: 5%;
+  margin-top: 10px;
+  transition: all 450ms ease;
+    margin-top: 110px;
 }
 .btnCart:hover {
     background: rgb(46, 46, 46);
