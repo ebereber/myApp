@@ -20,20 +20,19 @@ function TotalAmount() {
     }, [cartList]) 
 
     return (
-        <div className="checkout">
+      <div className="checkout">
         <div className="total">
-        <div>
-        <div className="Subtotal">Total</div>
-        <div className="units-items">
-            <CartUnits/> 
-            <p className="p-units"> unidades</p>
+          <div>
+            <div className="Subtotal">Total</div>
+            <div className="units-items">
+              <CartUnits />
+              <p className="p-units"> unidades</p>
+            </div>
+          </div>
+          <div className="total-amount">${totalPrice}</div>
         </div>
-        </div>
-        <div className="total-amount">${totalPrice}</div>
-        </div>
-        
-        </div>
-    )
+      </div>
+    );
 }
 
 export default TotalAmount

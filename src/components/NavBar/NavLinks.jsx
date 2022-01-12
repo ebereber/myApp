@@ -1,6 +1,4 @@
 import React from 'react'
-import CartWidget from "./CartWidget"
-import {FaAngleDown} from "react-icons/fa"
 import { Link } from "react-router-dom"
 
 export default function NavLinks() {

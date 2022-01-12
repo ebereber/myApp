@@ -36,7 +36,7 @@ function App() {
             />
             <Route exact path="/carrito/" element={<Carrito />} />
 
-            <Route exact path="/checkout/" element={<Checkout/>} />
+            <Route exact path="/checkout/" element={<Checkout />} />
           </Routes>
         </>
       </BrowserRouter>

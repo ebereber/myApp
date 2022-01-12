@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+
 import {MdOutlineShoppingCart} from "react-icons/md"
 import { useCartContext } from "../../Context/CartContext"
 import CartUnits from './CartUnits'
@@ -11,7 +11,7 @@ function CartWidget() {
     
    
     return (
-        cartList.length > 0 ?
+        cartList.length  ?
 
         <div className={styles.cart}>
             <MdOutlineShoppingCart className={styles.logoSize}/>
