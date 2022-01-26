@@ -17,7 +17,7 @@ function NavBar() {
       </label>
       <Link to="/" className="home">
         <h3 className="logo">
-          Lemar <span> Electricidad</span>
+          lemar <span> electricidad</span>
         </h3>
       </Link>
       <NavLinks />

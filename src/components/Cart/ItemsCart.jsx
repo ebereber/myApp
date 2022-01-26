@@ -15,7 +15,9 @@ function ItemsCart() {
             <h4 className="title-item">{item.title}</h4>
             <p className="sub-item">{item.detail}</p>
           </div>
+          
           <p className="item-quantity">{item.quantity}</p>
+         
           <p className="amount">${item.price}</p>
           <div className="removeItem">
             <FiTrash2 className="trash" onClick={() => removeItem(item.id)} />

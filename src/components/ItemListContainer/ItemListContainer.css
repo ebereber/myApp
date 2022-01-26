@@ -1,15 +1,146 @@
+
 .item-container{
     font-weight: 600;
     font-size: 18px;
     text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
     z-index: -1;
-    padding: 2rem ;
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(200,300px);
+    gap: 10px;
    
 }
 
  .sweet-loading{
     margin: 25%;
 }
+
+/* links categorias*/
+.tagPopular{
+    grid-column: 1/2;
+    display: flex;
+    margin-left: 3%;
+    margin-top: 10px;
+}
+.popular{
+    display: inline-block;
+}
+
+.categories{
+    grid-row: 3/6;
+}
+.Link{
+    text-decoration: none;
+    color: black;
+    height: 20px;
+    font-size: 14px;
+}
+.filterLinks{
+    width: 50%;
+    position: relative;
+  display: flex;
+  margin-left: 20px;
+ 
+}
+.linkCate{
+    line-height: 30px;
+    margin-right: 20px;
+    
+}
+.linkCate:hover{
+    opacity: .4;
+}
+
+.homeCategory{
+    margin-left: 20px;
+    font-size: 12px;
+    position: relative;
+  
+}
+.home{
+    color: black;
+}
+.home:hover{
+    opacity: .4;
+}
+.categoryWrapp{
+    display: flex;
+  position: absolute;
+  bottom: 6px;
+
+
+}
+
+@media screen and (max-width: 705px) {
+    .item-container{
+        padding: 0;
+    }
+   
+    
+}
+
+@media screen and (min-width:500px) {
+    .item-container{
+        grid-template-columns: repeat(2,minmax(200px,300px)) ;
+    }
+    .conta{
+        grid-column: 1/3;
+    }
+    .tagPopular{
+        grid-column: 1/3;
+        
+    }.categories{
+        grid-row: 3/4;
+        grid-column: 1/3
+    }
+    
+    
+    
+}
+
+ @media screen and (min-width:650px) {
+    .item-container{
+        grid-template-columns: repeat(3,minmax(200px,300px)) ;
+    }
+    .conta{
+        grid-column: 1/4;
+    }
+    .tagPopular{
+        grid-column: 1/4;
+        
+    }.categories{
+        grid-row: 3/4;
+        grid-column: 1/4;
+       
+    }
+    
+    
+    
+} 
+@media screen and (min-width:865px) {
+    .item-container{
+        grid-template-columns: repeat(4,minmax(200px,300px)) ;
+    }
+    .conta{
+        grid-column: 1/5;
+    }
+    .tagPopular{
+        grid-column: 1/5;
+    }
+    .categories{
+        grid-row: 3/6;
+        grid-column: 1/2;
+    }
+    .filterLinks{
+        flex-direction: column;
+        margin-left: 0px;
+    }
+    .linkCate{
+       
+        margin-right: 0px;
+        
+    }
+    
+}  
+
+

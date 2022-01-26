@@ -3,14 +3,20 @@
 form{
     padding: 2rem;
     width: 100vw;
-    display: flex;
+    display: grid;
+    grid-template-columns:minmax(300px, 60%) 1fr;
+    position: absolute;
+    top: 66px;
+    left: 0;  
+    grid-column-gap:15px;
+    
     
 }
 .divForm{
-    width: 60%;
+    width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, minmax (200px,1fr));
     grid-template-rows: repeat(8,76px);
     grid-gap:20px;
     
@@ -22,6 +28,8 @@ form{
   }
     label{
         font-size: 13px;
+        
+       
     }
   
       .field{
@@ -48,6 +56,7 @@ form{
   
       .btnBuy{
           width: 100%;
+          height: 50%;
           padding: 0.8rem 1rem;
           background-color: #000;
           cursor: pointer;
@@ -63,13 +72,13 @@ form{
       /* right column*/
 
       .rightColumn{
-        width: 30%;
+        width: 100%;
         height: 100%;
         display: grid;
         grid-template-columns: repeat(1,1fr);
         grid-template-rows: 80px, 100px, 130px 80px, 80px;
         grid-gap:20px;
-        margin-left: 110px;
+       
         
       }
       .rightColumn h2{
@@ -79,8 +88,8 @@ form{
       .shipping{
         border:1px solid rgba(0,0,0,.11);
         width:100%;
-        height: 100%;
-        background-color: #fafafa;
+        height: 80%;
+      
       padding: 10px;
       }
 
@@ -96,26 +105,6 @@ form{
         
       }
       
-
-      @media  (max-width:700px){
-        formn{
-          flex-direction: column;
-        }
-        .divFform{
-          width: 100%;
-        }
-        .rightColumn{
-        width: 100%;
-        }
-
-    }
-    @media  (max-width:520px) {
-      .divForm{
-        display: block;
-        
-      }
-      
-    }
 
     /* Track ID */
 
@@ -143,3 +132,32 @@ form{
       height: 40px;
       width: 70px;
     }
+
+    .error{
+     
+      color: rgb(255, 72, 72);
+      font-size: 15px;
+    }
+    .modalContainer{
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* .inputSend{
+      display: flex;
+    } */
+
+    /* .totalAmount{
+      font-size: 100px;
+    } */
+
+    @media screen and (max-width:600px) {
+      form{
+        grid-template-columns:minmax(300px, 1fr);
+      }
+      .btnBuy{
+       
+        height: 100%;
+    }
+  }

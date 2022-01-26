@@ -8,8 +8,10 @@ import { Link } from "react-router-dom";
 
 
 
+
 function Carrito() {
   const { cartList } = useCartContext();
+ 
 
   return cartList.length ? (
     <div className="cart-container">

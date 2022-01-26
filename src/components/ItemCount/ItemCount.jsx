@@ -1,10 +1,9 @@
 import Counter from "./Counter";
 import "./ItemCount.css";
 
-function ItemCount({ stock, onAdd }) {
+function ItemCount({onAdd }) {
 
-  return <Counter 
-          stock={stock} 
+  return <Counter  
           onAdd={onAdd} />;
 }
 

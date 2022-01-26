@@ -1,11 +1,16 @@
-import { useState } from "react";
+
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { useCartContext } from "../../Context/CartContext";
+import { useProduct } from "../Hooks/useProduct";
 import ItemCount from "../ItemCount/ItemCount";
 import "../ItemDetailContainer/ItemDetail.css";
 
-function ItemDetail({ product }) {
-  
+
+
+function ItemDetail() {
+  const { product } = useProduct();
+
   const [cart, setCart] = useState(false);
   const { addToCart } = useCartContext();
 
@@ -19,6 +24,7 @@ function ItemDetail({ product }) {
       <div className="left-wrap">
         <img className="img-detalle" src={product.pictureUrl} alt="" />
       </div>
+     
 
       <div className="right-wrap">
         <div className="center-div">
@@ -32,12 +38,17 @@ function ItemDetail({ product }) {
           <h2 className="p-product precio">${product.price}</h2>
           {!cart ? (
             <div className="item-count">
-              <ItemCount stock={product.stock} onAdd={onAdd} />
+              <ItemCount onAdd={onAdd} />
             </div>
           ) : (
-            <Link to="/carrito">
-              <button className="btnCart">Ir al carrito</button>
-            </Link>
+            <div className="buttonsDeatail">
+              <Link to="/">
+                <button className="btnCart">Seguir comprando</button>
+              </Link>
+              <Link to="/carrito">
+                <button className="btnCart">Ir al carrito</button>
+              </Link>
+            </div>
           )}
         </div>
       </div>

@@ -6,6 +6,7 @@ import {collection,getDocs,getFirestore,query,where} from "firebase/firestore";
 import { css } from "@emotion/react";
 import PropagateLoader from "react-spinners/PropagateLoader";
 import Hero from "../Hero/Hero";
+import { Link } from "react-router-dom";
 
 const override = css`
   display: block;
@@ -17,6 +18,8 @@ function ItemListContainer(props) {
   const [products, setProducts] = useState({});
   const { idCategoria } = useParams();
   const [loading, setLoading] = useState(true);
+
+  
 
   useEffect(() => {
     const db = getFirestore();
@@ -52,10 +55,56 @@ function ItemListContainer(props) {
           {undefined == idCategoria ? (
             <>
               <Hero />
+              <div className="tagPopular">
+                <h3 className="popular">productos</h3>
+              </div>
+              <div className="categories">
+                <div className="filterLinks">
+                  <Link to="/colgantes" className="Link">
+                    <p className="linkCate">colgantes</p>
+                  </Link>
+                  <Link to="/veladores" className="Link">
+                    <p className="linkCate">veladores</p>
+                  </Link>
+                </div>
+              </div>
               <ItemList products={products} />
             </>
           ) : (
             <>
+              <Hero />
+              <div className="tagPopular">
+                <h3 className="popular">productos</h3>
+                {idCategoria === "veladores" ? (
+                  <div className="homeCategory">
+                    <div className="categoryWrapp">
+                    <Link to="/" className="home">
+                      <p className="categoryHome">home</p>
+                    </Link>
+                    /<p>veladores</p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="homeCategory">
+                    <div className="categoryWrapp">
+                    <Link to="/" className="home">
+                      <products className="categoryHome">home</products>
+                    </Link>
+                    /<p>colgantes</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div className="categories">
+                <div className="filterLinks">
+                  <Link to="/colgantes" className="Link">
+                    <p className="linkCate">colgantes</p>
+                  </Link>
+                  <Link to="/veladores" className="Link">
+                    <p className="linkCate">veladores</p>
+                  </Link>
+                </div>
+              </div>
               <ItemList products={products} />
             </>
           )}
@@ -66,3 +115,4 @@ function ItemListContainer(props) {
 }
 
 export default ItemListContainer;
+

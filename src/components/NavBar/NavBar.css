@@ -7,7 +7,7 @@
     align-items: center;
     height: 75px;
     position: relative;
-    z-index: 1;
+    z-index: 50;
     width: 100%;
     position: sticky;
     top: 0;
@@ -22,16 +22,15 @@
 
 .logo {
     color: black;
-    font-weight: 800;
+   
     text-decoration: none;
     position: absolute;
     top: 25px;
-    left: 8%;
+    left: 3%;
 }
 
-.logo span{
-    opacity: .6;
-}
+
+
 
 .nav-links{
     display: flex;
@@ -102,6 +101,41 @@ label #bulb-off{
     display: none;
 }
 
+
+
+
+.productos{
+    position: relative;
+    
+}
+.productos ul{
+    margin-top: -2px;
+    position:absolute;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 0.4s;
+    width: 150px;
+    height: 300px;
+    box-shadow: 0 4px 9px 0 rgb(67 65 79 / 10%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    right: -20px;
+    background: #fff;
+}
+
+.productos ul .drop{
+    text-decoration: none;
+    color: black;
+}
+
+.productos:hover ul{
+    max-height: 200px;
+}
+
+
 @media (max-width:870px){
     label #bulb-off{
         display: block;
@@ -141,38 +175,11 @@ label #bulb-off{
     
 }
 
-
-.productos{
-    position: relative;
-    
+@media (max-width:542px){
+   
+    .logo {
+        
+        
+        left: 33%;
+    }
 }
-.productos ul{
-    margin-top: -2px;
-    position:absolute;
-    max-height: 0px;
-    overflow: hidden;
-    transition: all 0.4s;
-    width: 150px;
-    height: 300px;
-    box-shadow: 0 4px 9px 0 rgb(67 65 79 / 10%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    list-style: none;
-    right: -20px;
-    background: #fff;
-}
-
-.productos ul .drop{
-    text-decoration: none;
-    color: black;
-}
-
-.productos:hover ul{
-    max-height: 200px;
-}
-
-
-
-

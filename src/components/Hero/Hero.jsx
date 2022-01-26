@@ -1,11 +1,13 @@
 import React from "react";
-import "./Hero.css";
+import "./Hero.css"; 
 import { BiRightArrowAlt } from "react-icons/bi";
-
+import "../ItemListContainer/ItemListContainer.css"
 function Hero() {
     
   return (
+    <div className="conta">
     <div className="hero-container">
+
       <div className="hero-left">
         <div className="det-info">
           <h1 className="titulo">Mi Smart LED Desk Lamp Pro</h1>
@@ -21,13 +23,19 @@ function Hero() {
           </button>
         </div>
       </div>
+        
 
-      <div className="hero-rigth">
-        <img
-          src="https://homekitnews.com/wp-content/uploads/2019/01/Mi-desk-lamp-pro-fi.jpg"
+        
+        <div className="hero-right">
+        <div className="imgheroDiv"> 
+         <img className="img-hero"
+          src="https://www.darklightdesign.com/Media/6897/Seed-Design-Damo-D-Table-Lamp-1.jpg?anchor=center&mode=crop&width=1060&height=1060&rnd=131876945980000000"
           alt=""
-        />
-      </div>
+        /> 
+</div> 
+        </div>
+      
+    </div>
     </div>
   );
 }

@@ -12,6 +12,7 @@ import Checkout from "./components/Checkout/Checkout";
 
 
 
+
 function App() {
   return (
     <CartContextProvider>
@@ -26,7 +27,7 @@ function App() {
             />
             <Route
               exact
-              path="/productos/:idCategoria"
+              path="/:idCategoria"
               element={<ItemListContainer greetings=" Item list container" />}
             />
             <Route
@@ -38,6 +39,7 @@ function App() {
 
             <Route exact path="/checkout/" element={<Checkout />} />
           </Routes>
+        
         </>
       </BrowserRouter>
     </CartContextProvider>

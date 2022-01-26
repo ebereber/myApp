@@ -17,7 +17,7 @@ function CartUnits() {
     setUnits(totalItems);
   }, [cartList]);
 
-  return <h4>{units}</h4>;
+  return <h4 className="unitsH">{units}</h4>;
 }
 
 export default CartUnits;
