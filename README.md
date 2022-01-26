@@ -1,7 +1,7 @@
 # Proyecto e-commerce :computer:
 E-commerce desarrollado en React para fábrica de luminarias.
 
-## Link al e-commerce:
+## Link:
 - [Lemar Electricidad](https://lemarelectricidad.netlify.app/)
 
 ### Navegacion
