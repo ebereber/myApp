@@ -1,35 +1,41 @@
-import {useState, useEffect} from 'react'
-import { useParams } from 'react-router-dom'
-import {getFetch} from "../../Helpers/getFetch"
-import "./ItemDetailContainer.css"
-import ItemDetail from './ItemDetail'
+
+import "./ItemDetail.css";
+import ItemDetail from "./ItemDetail";
+import { useProduct } from "../Hooks/useProduct";
+import PropagateLoader from "react-spinners/PropagateLoader";
+import { css } from "@emotion/react";
 
 function ItemDetailContainer() {
+  
+  const {loading}= useProduct()
 
-const [product, setProduct] = useState([])
-const {id} = useParams()
-const [loading, setLoading] = useState(true)
+  const override = css`
+  display: block;
+`;
 
-useEffect(()=>{
-    getFetch
-        .then(data => setProduct(data.find((product) => product.id === +id)))
-        .catch(err => console.log(err))
-        .finally(()=>setLoading(false))
-},[id])
 
-    return (
-      <>
-        { loading ?
-
-        <h3>cargando...</h3>
-        :
-          <div className="container-item">
-            
-          <ItemDetail product={product} />
-        </div> 
-        }
-      </>
-    );
+  return (
+    
+<div className="container-item">
+      {loading ? (
+        <div className="sweet-loading2">
+        <PropagateLoader
+          color="black"
+          loading={loading}
+          css={override}
+          size={15}
+        />
+      </div>
+      
+      ) : (
+        <>
+        
+          <ItemDetail />
+          </>
+      )}
+    
+    </div>
+  );
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

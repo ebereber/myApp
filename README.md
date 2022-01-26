@@ -1,10 +1,12 @@
 # Proyecto e-commerce :computer:
-E-commerce desarrollado en React como proyecto final para el curso de CoderHouse.
+E-commerce desarrollado en React para fábrica de luminarias.
 
 ### Navegacion
-- Home con productos
-- Navegacion por categoria de productos
-- Pantalla de detalle de productos
+- Home con productos.
+- Navegacion por categoria de productos.
+- Pantalla de detalle de productos.
+- Carro de compras con los items seleccionados.
+
 
 La app permite ver el catálogo, y navegar al  detalle del producto.
 
@@ -13,6 +15,7 @@ La app permite ver el catálogo, y navegar al  detalle del producto.
 - [Vite](https://vitejs.dev/)
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [React Router](https://reactrouter.com/)
+- [Firebase](https://firebase.google.com/)
 
 ### Intalación
 

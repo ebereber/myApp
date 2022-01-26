@@ -2,7 +2,13 @@
 
 
 const product =[
-    { id: 1, title:"Circe", description:"colgantes", detail: "Modelo Circe de metal negro mate", price: 120, pictureUrl:"https://leukiluminacion.com/wp-content/uploads/2019/08/7-1.jpg", stock: 5 },
+    { id: 1, title:"Circe", description:"colgantes", detail: "Modelo Circe de metal negro mate", price: 120, 
+    pictureUrl:"https://leukiluminacion.com/wp-content/uploads/2019/08/7-1.jpg",
+    pictureUrl2:"https://leukiluminacion.com/wp-content/uploads/2019/08/1-12.jpg",
+    pictureUrl3:"https://leukiluminacion.com/wp-content/uploads/2019/08/2-10.jpg",
+    pictureUrl4:"https://leukiluminacion.com/wp-content/uploads/2019/08/6-1.jpg",
+    pictureUrl5:"https://leukiluminacion.com/wp-content/uploads/2019/08/Circe-2.jpg",
+     stock: 5 },
     { id: 2, title:"Zarek Negro", description:"colgantes", detail: "Modelo Zarek de aluminio y madera", price: 160, pictureUrl:"https://leukiluminacion.com/wp-content/uploads/2019/08/Zarek-Negro-600x600.jpg", stock: 4 },
     { id: 3, title:"Kassia", description:"colgantes", detail: "Modelo Kassia de aluminio y madera", price: 130, pictureUrl:"https://leukiluminacion.com/wp-content/uploads/2019/08/Kassia-e1625145906387.jpg", stock: 6 },
     { id: 4, title:"Conda Negro", description:"colgantes", detail: "Modelo Circe de metal negro mate", price: 760, pictureUrl:"https://leukiluminacion.com/wp-content/uploads/2020/03/3-7.jpg", stock: 8 },

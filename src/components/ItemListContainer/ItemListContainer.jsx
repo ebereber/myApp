@@ -1,11 +1,12 @@
-import {useState, useEffect} from 'react'
-import {useParams} from "react-router-dom"
-import "./ItemListContainer.css"
-import { getFetch } from '../../Helpers/getFetch'
-import ItemList from '../ItemList/ItemList';
-import {doc, getDoc, getFirestore} from "firebase/firestore"
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import "./ItemListContainer.css";
+import ItemList from "../ItemList/ItemList";
+import {collection,getDocs,getFirestore,query,where} from "firebase/firestore";
 import { css } from "@emotion/react";
 import PropagateLoader from "react-spinners/PropagateLoader";
+import Hero from "../Hero/Hero";
+import { Link } from "react-router-dom";
 
 const override = css`
   display: block;
@@ -13,50 +14,105 @@ const override = css`
 `;
 
 function ItemListContainer(props) {
-
-    const [products, setProduct] = useState([]);
-    const { idCategoria } = useParams()
-    const [loading, setLoading]= useState(true)
     
+  const [products, setProducts] = useState({});
+  const { idCategoria } = useParams();
+  const [loading, setLoading] = useState(true);
+
+  
+
   useEffect(() => {
-        getFetch
-        .then(dataRes => {
-            let data = idCategoria
-            ? dataRes.filter(products => products.description === idCategoria)
-            :dataRes;
-            setProduct(data)
-            
-    })
-    .finally(()=>setLoading(false))  
-}, [idCategoria])
+    const db = getFirestore();
+    const queryCollection = collection(db, "items");
 
-//   useEffect(() => {
-//         const db = getFirestore()
-//         const queryDb = doc(db, "items","hcNeOt5z4oGwmBvTc2b9" )
-//         getDoc(queryDb)
-//         .then(dataRes => console.log(dataRes))
-//     })
-// }, [idCategoria])
-    
+    let data = idCategoria
+      ? query(queryCollection, where("description", "==", idCategoria))
+      : queryCollection;
+    getDocs(data)
+      .then((collection) => {
+        const produ = collection.docs.map((prod) => ({
+          id: prod.id,
+          ...prod.data(),
+        }));
+        setProducts(produ);
+      })
+      .finally(() => setLoading(false));
+  }, [idCategoria]);
 
-    return (
-        <div className="item-container">
-    
-           
-            {   loading ?
-            <div className="sweet-loading">
-                <PropagateLoader 
-                    color=" gray" 
-                    loading={loading} 
-                    css={override} 
-                    size={15} />
-            </div>  
-            :  
-                <ItemList  
-                    products={products}/>
-            }            
+  return (
+    <div className="item-container">
+      {loading ? (
+        <div className="sweet-loading">
+          <PropagateLoader
+            color="black"
+            loading={loading}
+            css={override}
+            size={15}
+          />
         </div>
-    )
+      ) : (
+        <>
+          {undefined == idCategoria ? (
+            <>
+              <Hero />
+              <div className="tagPopular">
+                <h3 className="popular">productos</h3>
+              </div>
+              <div className="categories">
+                <div className="filterLinks">
+                  <Link to="/colgantes" className="Link">
+                    <p className="linkCate">colgantes</p>
+                  </Link>
+                  <Link to="/veladores" className="Link">
+                    <p className="linkCate">veladores</p>
+                  </Link>
+                </div>
+              </div>
+              <ItemList products={products} />
+            </>
+          ) : (
+            <>
+              <Hero />
+              <div className="tagPopular">
+                <h3 className="popular">productos</h3>
+                {idCategoria === "veladores" ? (
+                  <div className="homeCategory">
+                    <div className="categoryWrapp">
+                    <Link to="/" className="home">
+                      <p className="categoryHome">home</p>
+                    </Link>
+                    /<p>veladores</p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="homeCategory">
+                    <div className="categoryWrapp">
+                    <Link to="/" className="home">
+                      <products className="categoryHome">home</products>
+                    </Link>
+                    /<p>colgantes</p>
+                    </div>
+                  </div>
+                )}
+              </div>
+              <div className="categories">
+                <div className="filterLinks">
+                  <Link to="/colgantes" className="Link">
+                    <p className="linkCate">colgantes</p>
+                  </Link>
+                  <Link to="/veladores" className="Link">
+                    <p className="linkCate">veladores</p>
+                  </Link>
+                </div>
+              </div>
+              <ItemList products={products} />
+            </>
+          )}
+        </>
+      )}
+    </div>
+  );
 }
 
-export default ItemListContainer
+export default ItemListContainer;
+

@@ -1,0 +1,163 @@
+
+
+form{
+    padding: 2rem;
+    width: 100vw;
+    display: grid;
+    grid-template-columns:minmax(300px, 60%) 1fr;
+    position: absolute;
+    top: 66px;
+    left: 0;  
+    grid-column-gap:15px;
+    
+    
+}
+.divForm{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax (200px,1fr));
+    grid-template-rows: repeat(8,76px);
+    grid-gap:20px;
+    
+  }
+  
+  .userDetails{
+      grid-column: 1/3;
+      font-size: 18px;
+  }
+    label{
+        font-size: 13px;
+        
+       
+    }
+  
+      .field{
+        width: 100%;
+        height: 40px;
+          padding: 0.3rem 1rem;
+          background-color: rgba(230, 230, 230, 0.6);
+          
+          margin-top: 20px;
+          outline: none;
+          border: 2px solid rgba(0, 0,0,0);
+          transition: .3s;
+  
+      }
+  
+      .field:hover{
+          background-color: rgba(0, 0, 0, 0.1);
+      }
+  
+      .field:focus{
+          background-color: #fff;
+          border: 2px solid rgba(5, 4, 4, 0.1);
+      }
+  
+      .btnBuy{
+          width: 100%;
+          height: 50%;
+          padding: 0.8rem 1rem;
+          background-color: #000;
+          cursor: pointer;
+          outline: none;
+          border: none;
+          color: #fff;
+          transition: .3s;
+      }
+      .btnBuy:hover{
+      background-color: rgb(46, 45, 45);
+      }
+
+      /* right column*/
+
+      .rightColumn{
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        grid-template-rows: 80px, 100px, 130px 80px, 80px;
+        grid-gap:20px;
+       
+        
+      }
+      .rightColumn h2{
+        font-size: 18px;
+      }
+
+      .shipping{
+        border:1px solid rgba(0,0,0,.11);
+        width:100%;
+        height: 80%;
+      
+      padding: 10px;
+      }
+
+      .shipping p{
+        font-size: 12px;
+        margin-bottom: 3px;
+      }
+      .shipping input{
+        margin-right: 6px;
+      }
+      .shippingLabel{
+        font-size: 12px;
+        
+      }
+      
+
+    /* Track ID */
+
+    .orderContainer{
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .purchaseConfirmed{
+      border:1px solid rgba(0,0,0,.11);
+      width: 40%;
+      height: 50%;
+      background-color: #fafafa;
+      padding: 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      line-height: 30px;
+    }
+
+    .cart{
+      height: 40px;
+      width: 70px;
+    }
+
+    .error{
+     
+      color: rgb(255, 72, 72);
+      font-size: 15px;
+    }
+    .modalContainer{
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* .inputSend{
+      display: flex;
+    } */
+
+    /* .totalAmount{
+      font-size: 100px;
+    } */
+
+    @media screen and (max-width:600px) {
+      form{
+        grid-template-columns:minmax(300px, 1fr);
+      }
+      .btnBuy{
+       
+        height: 100%;
+    }
+  }
