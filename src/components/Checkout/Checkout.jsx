@@ -3,7 +3,7 @@ import Form from './Form';
 import React from 'react'
 import style from "../Checkout/Checkout.module.css"
 
-import { useForm } from '../Hooks/useForm';
+import { useForm } from '../../hooks/useForm';
 import Modal from './Modal';
 import { useCartContext } from '../../Context/CartContext';
 import {Overlay} from "./OverlayStyle";

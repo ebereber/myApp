@@ -1,49 +1,29 @@
+import { GlobalStyles } from './styles/GlobalStyles'
+import CartContextProvider from './Context/CartContext'
+import AppRouter from './routes/AppRouter'
+import { createContext, useState } from 'react'
+import { darkTheme, lightTheme } from './styles/Theme'
+import { ThemeProvider } from 'styled-components'
 
-import {BrowserRouter, Routes, Route} from "react-router-dom"
-import './App.css'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import NavBar from './components/NavBar/NavBar'
-import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import Carrito from "./components/Cart/Carrito"
-import CartContextProvider from "./Context/CartContext"
-import Checkout from "./components/Checkout/Checkout";
-
-
-
-
-
+export const ThemeContext = createContext()
 
 function App() {
-  return (
-    <CartContextProvider>
-      <BrowserRouter>
-        <>
-          <NavBar />
-          <Routes>
-            <Route
-              exact
-              path="/"
-              element={<ItemListContainer greetings=" Item list container" />}
-            />
-            <Route
-              exact
-              path="/:idCategoria"
-              element={<ItemListContainer greetings=" Item list container" />}
-            />
-            <Route
-              exact
-              path="/detalle/:id"
-              element={<ItemDetailContainer />}
-            />
-            <Route exact path="/carrito/" element={<Carrito />} />
+  const [theme, setTheme] = useState('light')
 
-            <Route exact path="/checkout/" element={<Checkout />} />
-          </Routes>
-        
-        </>
-      </BrowserRouter>
-    </CartContextProvider>
-  );
+  const themeToggler = () => {
+	  theme === "light" ? setTheme("dark") : setTheme("light")
+  } 
+
+  return (
+    <ThemeContext.Provider value={{theme, setTheme}}>
+      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+        <GlobalStyles />
+        <CartContextProvider>
+            <AppRouter />
+        </CartContextProvider>
+      </ThemeProvider>
+    </ThemeContext.Provider>
+  )
 }
 
-export default App;
+export default App

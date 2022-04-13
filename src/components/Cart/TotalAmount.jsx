@@ -1,6 +1,6 @@
 import React from 'react'
 import { useCartContext } from "../../Context/CartContext";
-import CartUnits from "../NavBar/CartUnits";
+import CartUnits from "../header/Cart/CartUnits";
 
 function TotalAmount() {
 

@@ -2,7 +2,7 @@
 import React,{useState} from 'react'
 import {FiPlus} from "react-icons/fi"
 import {FiMinus} from "react-icons/fi"
-import { useProduct } from '../Hooks/useProduct';
+import { useProduct } from '../../hooks/useProduct';
 
 
 

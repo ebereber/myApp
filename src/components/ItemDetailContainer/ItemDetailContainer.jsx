@@ -1,41 +1,48 @@
-
-import "./ItemDetail.css";
-import ItemDetail from "./ItemDetail";
-import { useProduct } from "../Hooks/useProduct";
-import PropagateLoader from "react-spinners/PropagateLoader";
-import { css } from "@emotion/react";
+import ItemDetail from "./itemDetail/ItemDetail";
+import styled from "styled-components"
+import { b, space } from "../../styles/Variables";
+import useListProducts from "../../hooks/useListProducts";
+import Spinner from "../spinner";
 
 function ItemDetailContainer() {
-  
-  const {loading}= useProduct()
-
-  const override = css`
-  display: block;
-`;
-
+  const {loading} = useListProducts()
 
   return (
     
-<div className="container-item">
+<ItemDetailContent>
       {loading ? (
-        <div className="sweet-loading2">
-        <PropagateLoader
-          color="black"
-          loading={loading}
-          css={override}
-          size={15}
-        />
-      </div>
-      
+        <Spinner/>
       ) : (
         <>
-        
           <ItemDetail />
-          </>
+        </>
       )}
-    
-    </div>
+    </ItemDetailContent>
   );
 }
 
 export default ItemDetailContainer;
+
+const ItemDetailContent = styled.div`
+width: 100%;
+	height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem,1fr));
+    gap: 16px;
+	padding: 0;
+	margin-bottom: ${space.xl};
+	@media ${b.sm}{
+		padding: ${space.md};
+	}
+	@media ${b.md}{
+		padding: ${space.xl};
+	}
+`
+
+
+/*   height: 100vh;
+display: flex;
+flex-direction: column;
+margin-bottom: ${space.md};
+@media ${b.md}{
+	flex-direction: row; */
