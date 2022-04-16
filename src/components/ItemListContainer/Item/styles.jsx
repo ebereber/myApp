@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { b, fontSizes, space } from '../../../styles/Variables';
 
 export const CardContainer = styled.div`
-height: auto;
+height: 100%;
 width: 100%;
 min-width: 100px;
   color: ${({ theme }) => theme.text};
@@ -17,19 +17,9 @@ min-width: 100px;
 export const Card = styled.div`
   width: 100%;
   height: 100%;
-  &::before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-	top: 0;
-	left: 0;
-    background: rgba(19, 18, 18, 0.2);
-    transition: 0.3s;
-    opacity: 0;
-  }
-  &:hover::before{
-	  opacity: 1;
+  transform: scale(1);
+  &:hover{
+    transform: scale(1.01);
   }
 `
 

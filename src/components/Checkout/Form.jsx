@@ -1,7 +1,7 @@
 import React from 'react'
 import style from "../Checkout/Checkout.module.css"
-import ItemsCart from '../Cart/ItemsCart';
-import TotalAmount from '../Cart/TotalAmount';
+import ItemsCart from '../cart/items-cart';
+import TotalAmount from '../cart/total-amount';
 
 
 function Form({ handleChange, orderGenerator, dataForm,errors}) {

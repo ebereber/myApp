@@ -3,28 +3,21 @@ import { Link } from "react-router-dom";
 import styled from "styled-components"
 import { b, space } from "../../../styles/Variables";
 
-/* export const Content = styled.div`
-  height: 100vh;
-display: flex;
-flex-direction: column;
-margin-bottom: ${space.md};
-@media ${b.md}{
-	flex-direction: row;
-}
-` */
+
 export const Left = styled.div`
  width: 100%;
  display: flex;
  justify-content: center;
- align-items: center;
  
 `
 export const ProductImg = styled.img`
 width: 100%;
 object-fit: contain;
+@media ${b.sm}{
+	width: 100%;
+}
 @media ${b.md}{
-	width: 80%;
-
+	width: 100%;
 }
 `
 export const Right = styled.div`
@@ -43,9 +36,6 @@ export const Right = styled.div`
 export const DetailContainer = styled.div`
 width: 100%;
 padding: ${space.lg};
-@media ${b.md}{
-	width: 70%;
-}
 
 `
 export const ProductCategory = styled.span`
@@ -63,6 +53,7 @@ export const ProductDetail = styled.p`
   margin-top: ${space.lg};
   width: 100%;
   font-size: 14px;
+  
 
 `
 

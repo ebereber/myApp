@@ -1,4 +1,3 @@
-import './ItemListContainer.css'
 import ItemList from '../ItemListContainer/ItemList/ItemList'
 import useListProducts from '../../hooks/useListProducts';
 import Spinner from '../spinner';

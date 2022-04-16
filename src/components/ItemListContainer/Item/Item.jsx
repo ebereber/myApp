@@ -1,15 +1,13 @@
 import React from 'react'
 import { Card, CardContainer, ProductImg, SHeading, SLink, SPrice, STitle } from './styles';
 
-
-
 function Item({ product }) {
 
 	const {id, pictureUrl, title, price } = product
 
   return (
+    <SLink to={`/detalle/${id}`}>
     <CardContainer>
-      <SLink to={`/detalle/${id}`}>
         <Card>
           <ProductImg src={pictureUrl} alt='' />
           <STitle>
@@ -17,8 +15,8 @@ function Item({ product }) {
             <SPrice>${price} </SPrice>
           </STitle>
         </Card>
-      </SLink>
     </CardContainer>
+    </SLink>
   )
 }
 

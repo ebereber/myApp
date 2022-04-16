@@ -5,7 +5,7 @@ width: 50%;
 text-decoration: none;
 min-width: 150px;
 padding: 1rem 1rem;
-background-color: #000;
+background-color: ${({theme}) => theme.button};
 cursor: pointer;
 outline: none;
 border: none;
@@ -16,7 +16,7 @@ margin-top: 1rem;
 transition: all 450ms ease;
 
 :hover {
-  background: #141516;
+  background:  rgb(46, 46, 46);
   color: white;
 }
 `

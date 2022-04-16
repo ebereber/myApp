@@ -1,6 +1,5 @@
 import React from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
-import "../ItemListContainer/ItemListContainer.css"
 import { Banner, BannerContainer, BannerInfo, Button, Heading, Image, Left, Right, SImg, Text } from "./styles";
 
 function Hero() {
