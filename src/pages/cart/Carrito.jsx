@@ -1,12 +1,11 @@
 
-import "./Carrito.css"
 import ItemsCart from "./items-cart";
 import HeaderCart from "./header-cart"
-import EmptyCart from "./EmptyCart";
+import EmptyCart from "./empty-cart"
 import TotalAmount from "./total-amount";
-import { Link } from "react-router-dom";
-import { BtnPurchase, CartContainer } from "./styles";
+import { CartContainer } from "./styles";
 import { useCartContext } from "../../Context/CartContext";
+import Button from "../../components/button";
 
 function Carrito() {
   const { cartList } = useCartContext();
@@ -17,9 +16,6 @@ function Carrito() {
       <ItemsCart />
       <hr />
       <TotalAmount />
-      <Link to="/checkout">
-        <BtnPurchase>Finalizar compra</BtnPurchase>
-      </Link>
     </CartContainer>
   ) : (
     <EmptyCart />

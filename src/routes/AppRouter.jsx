@@ -1,7 +1,7 @@
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import ItemDetailContainer from '../components/ItemDetailContainer/ItemDetailContainer'
-import Carrito from "../components/cart/Carrito"
+import Carrito from "../pages/cart/Carrito"
 import Checkout from '../components/Checkout/Checkout'
 import Nosotros from '../pages/Nosotros'
 import Layout from '../components/layout'
