@@ -6,13 +6,16 @@ import TotalAmount from '../../pages/cart/total-amount';
 
 
 function Form({ handleChange, orderGenerator, dataForm,errors}) {
- 
+
+  const error = errors === undefined ? {} : errors
+
+  
   const data = [
-    {label:"Nombre *", name: "name", type : "text", defaultValue: `${dataForm.name}`, error : `${errors.name}`},
+    {label:"Nombre *", name: "name", type : "text", defaultValue: `${dataForm.name}`, error : `${error.name}`},
     {label:"Apellido", type : "text", defaultValue: `${dataForm.lastName}`},
-    {label:"Telefono *", name: "phone", type : "text", defaultValue: `${dataForm.phone}`, error : `${errors.phone}`},
-    {label:"Email *", name: "email", type : "email", defaultValue: `${dataForm.email}`,error : `${errors.email}`},
-    {label:"Confirmar email *",  name:"emailConfirmation", type : "email", defaultValue: `${dataForm.emailConfirmation}`, error : `${errors.emailConfirmation}`},
+    {label:"Telefono *", name: "phone", type : "text", defaultValue: `${dataForm.phone}`, error : `${error.phone}`},
+    {label:"Email *", name: "email", type : "email", defaultValue: `${dataForm.email}`,error : `${error.email}`},
+    {label:"Confirmar email *",  name:"emailConfirmation", type : "email", defaultValue: `${dataForm.emailConfirmation}`, error : `${error.emailConfirmation}`},
     {label:"Calle", type : "text", defaultValue: `${dataForm.street}`},
     {label:"Altura", type : "text", defaultValue: `${dataForm.number}`},
     {label:"Piso, departamento", type : "text", defaultValue: `${dataForm.apartament}`},
@@ -21,7 +24,7 @@ function Form({ handleChange, orderGenerator, dataForm,errors}) {
     {label:"Código Postal", type : "text", defaultValue: `${dataForm.postalCode}`},
     {label:"Documento", type : "text", defaultValue: `${dataForm.idCard}`},
     {label:"Fecha de nacimiento", type : "date", defaultValue: `${dataForm.birthDate}`}
-  ]
+  ] 
 
   return (
     <>
@@ -33,14 +36,14 @@ function Form({ handleChange, orderGenerator, dataForm,errors}) {
           <div className={style.divForm}>
             <h2 className={style.userDetails}>Finalizar compra</h2>
 
-      {data.map(({ label, type, defaultValue, error, name}) => {
-console.log(error);
-      return <label>{label}
+      {data.map(({ label, type, defaultValue, error, name}, index) => {
+
+      return <label key={index}>{label}
       <input type={type} name={name} defaultValue={defaultValue} className={style.field}/>
-     <span>{error}</span> 
+    <span>{error}</span>
        
       </label>
-      })}
+      })} 
 
             <label>
               Nombre *

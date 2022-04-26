@@ -23,6 +23,7 @@ export const SFooter = styled.footer`
   margin: 0 auto;
   @media ${b.md} {
     max-width: calc(100% - 80px);
+
   }
 `
 
@@ -86,6 +87,15 @@ export const FooterContent = styled.div`
   @media ${b.md} {
     grid-template-columns: repeat(4, 1fr);
   }
+`
+export const SBox = styled.div`
+width: 100%;
+display: flex;
+justify-content: center;
+@media ${b.sm}{
+  justify-content: center;
+  
+}
 `
 export const FooterContentColumn = styled.div`
   display: flex;

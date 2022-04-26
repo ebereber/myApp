@@ -1,5 +1,5 @@
 import React from 'react'
-import { BaseFooter, SFooter, FooterContainer, FooterContent, FooterContentColumn, FooterContentHeadline, FooterHeadline, FooterNewsletter, FooterYear, Logo, NewsletterForm, SButton, SInput, SLi, SLink, SUl } from './styles'
+import { BaseFooter, SFooter, FooterContainer, FooterContent, FooterContentColumn, FooterContentHeadline, FooterHeadline, FooterNewsletter, FooterYear, Logo, NewsletterForm, SButton, SInput, SLi, SLink, SUl, SBox } from './styles'
 
 
 const footertColums = [
@@ -31,6 +31,7 @@ function Footer() {
             <SButton>Suscribirse</SButton>
           </NewsletterForm>
         </FooterNewsletter>
+        <SBox>
         <FooterContent>
           <Logo>Lemar Electricidad</Logo>
           {footertColums.map(({ id, headline, links }) => (
@@ -46,6 +47,7 @@ function Footer() {
             </FooterContentColumn>
           ))}
         </FooterContent>
+        </SBox>
         
       </SFooter>
 	  <BaseFooter>

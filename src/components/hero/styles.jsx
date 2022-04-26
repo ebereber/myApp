@@ -1,6 +1,43 @@
 import styled from "styled-components";
 import { b, fontSizes, space } from "../../styles/Variables";
 
+export const BannerContainer = styled.div`
+grid-column: 1;
+grid-row: 1/2;
+width: 100%;
+color: #fff;
+@media ${b.sm}{
+  grid-column: 1/-1;
+  
+
+}	
+
+`;
+export const Banner=styled.div`
+	display: flex;
+	flex-direction: column;
+    width: 100%;
+    height: 700px;
+    justify-content: center;
+	@media ${b.sm}{
+		flex-direction: row;
+		height: 300px;
+	}
+`;
+export const Left = styled.div`
+width: 100%;
+height: 40%;
+order: 2;
+display: flex;
+flex-direction: column;
+justify-content: center;
+background-color: #050A10;
+@media ${b.sm}{
+	width: 70%;
+	order:1;
+	height: 100%;
+}
+`;
 
 export const Heading = styled.h2`
 	text-align: start;
@@ -10,44 +47,26 @@ export const Heading = styled.h2`
 export const Text = styled.span`
 	margin-bottom: ${space.sm};
 	text-align: justify;
- /*  @media ${b.sm}{
-    font-size: ${fontSizes.sm};
-  } */
+	font-size: ${fontSizes.sm};
+   @media ${b.md}{
+	font-size:${fontSizes.md}
+   
+  } 
 `;
 
-export const BannerContainer = styled.div`
-grid-column: 1;
-grid-row: 1/2;
-width: 100%;
-color: #fff;
-@media ${b.sm}{
-  grid-column: 1/-1;
 
-}	
-
-`;
-export const Banner=styled.div`
-	display: flex;
-    width: 100%;
-    height: 300px;
-    justify-content: center;
-`
 ;
-export const Left = styled.div`
-width: 70%;
-display: flex;
-flex-direction: column;
-justify-content: center;
-background-color: #050A10;
 
-`;
 export const BannerInfo = styled.div`
 display: flex;
 flex-direction: column;
 margin: auto;
 width: 90%;
-@media ${b.md}{
-  width: 80%
+
+@media ${b.sm}{
+  width: 80%;
+  margin: auto;
+
 }
 
 	
@@ -76,11 +95,21 @@ export const Button = styled.button`
 	:hover{
 		transform: scale(1.01);
 	}
+	@media ${b.sm}{
+		
+	}
 `
 
 export const Right = styled.div`
-width: 30%;
-height: 100%;
+width: 100%;
+height: 60%;
+order: 1;
+min-width: 200px;
+@media ${b.sm}{
+	width: 30%;
+	height: 100%;
+	order: 2;
+}
 	
 `;
 export const Image = styled.div`
@@ -94,4 +123,12 @@ height: 100%;
 object-fit: cover;
 `;
 
-
+export const BoxBtn = styled.div`
+display: flex;
+justify-content: center;
+margin-top: .5rem;
+@media ${b.sm}{
+	justify-content: flex-start;
+	margin-top: 0;
+}
+`

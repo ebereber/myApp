@@ -1,11 +1,13 @@
 import styled, { css } from 'styled-components';
 import {FiPlus} from "react-icons/fi"
 import {FiMinus} from "react-icons/fi"
+import { b } from '../../../styles/Variables';
 
 export const SCounter = styled.div`
     margin-top: 20px;
     display: flex;
     flex-direction: column;
+    
 `
 
 export const SCountNumber = styled.h4`

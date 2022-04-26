@@ -17,7 +17,7 @@ export default Home
 
 
 export const Content = styled.div`
-		width: 100%;
+	width: 100%;
 	height: 100%;
 	font-weight: 600;
     text-align: center;
@@ -27,6 +27,7 @@ export const Content = styled.div`
     gap: 16px;
 	padding: 0;
 	margin-bottom: ${space.xl};
+    transition: 0.3s ease padding;
 	@media ${b.sm}{
 		padding: ${space.md};
 	}

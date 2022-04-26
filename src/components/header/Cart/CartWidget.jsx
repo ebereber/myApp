@@ -1,14 +1,10 @@
 
 import {MdOutlineShoppingCart} from "react-icons/md"
 import { Link } from "react-router-dom";
-
 import styled from 'styled-components';
 import { useCartContext } from "../../../Context/CartContext";
 import { b, space } from "../../../styles/Variables";
 import CartUnits from "./CartUnits";
-
-
-
 
 
 function CartWidget() {
@@ -67,7 +63,7 @@ const TotalItems = styled.div`
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    color: ${({theme}) => theme.primary};
+    color: ${({theme}) => theme.text3};
     display: flex;
     justify-content: center;
     align-items: center;

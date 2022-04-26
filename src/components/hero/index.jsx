@@ -1,6 +1,6 @@
 import React from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
-import { Banner, BannerContainer, BannerInfo, Button, Heading, Image, Left, Right, SImg, Text } from "./styles";
+import { Banner, BannerContainer, BannerInfo, BoxBtn, Button, Heading, Image, Left, Right, SImg, Text } from "./styles";
 
 function Hero() {
     
@@ -17,10 +17,12 @@ function Hero() {
               ajustable, igual que la temperatura del color y el brillo, que
               brindan una mejor experiencia de iluminación.
 			</Text>
+      <BoxBtn>
             <Button>
               Cómo funciona?
               <BiRightArrowAlt />
             </Button>
+            </BoxBtn>
           </BannerInfo>
         </Left>
 

@@ -1,5 +1,4 @@
 
-import { Link } from "react-router-dom";
 import styled from "styled-components"
 import { b, space } from "../../../styles/Variables";
 
@@ -13,6 +12,8 @@ export const Left = styled.div`
 export const ProductImg = styled.img`
 width: 100%;
 object-fit: contain;
+max-width: 500px;
+min-width: 350px;
 @media ${b.sm}{
 	width: 100%;
 }
@@ -36,6 +37,10 @@ export const Right = styled.div`
 export const DetailContainer = styled.div`
 width: 100%;
 padding: ${space.lg};
+display: flex;
+flex-direction: column;
+
+
 
 `
 export const ProductCategory = styled.span`
@@ -53,8 +58,6 @@ export const ProductDetail = styled.p`
   margin-top: ${space.lg};
   width: 100%;
   font-size: 14px;
-  
-
 `
 
 export const ProductPrice = styled.h2`
@@ -65,25 +68,16 @@ export const ProductPrice = styled.h2`
 export const Buttons = styled.div`
 display: flex;
 width: 100%;
+justify-content: center;
+@media ${b.md}{
+  justify-content: flex-start;
+}
 `
-/* export const Btn = styled(Link)`
-
-    width: 40%;
-    text-decoration: none;
-    min-width: 150px;
-    padding: 1rem 1rem;
-    background-color: #000;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    color: #fff;
-    transition: .3s;
-    margin-right: 5%;
-    margin-top: 10px;
-    transition: all 450ms ease;
-  :hover {
-    background: rgb(46, 46, 46);
-    color: white;
+export const SBoxBtn = styled.div`
+  display: flex;
+  justify-content: center;
+  @media ${b.md}{
+    justify-content: flex-start;
   }
+
 `
- */

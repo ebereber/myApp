@@ -4,7 +4,7 @@ import { useCartContext } from "../../../Context/CartContext";
 import { useProduct } from "../../../hooks/useProduct";
 import Button from "../../button";
 import ItemCount from "../../ItemCount/ItemCount";
-import { Buttons, DetailContainer, Left, ProductCategory, ProductDetail, ProductImg, ProductName, ProductPrice, Right } from "./styles";
+import { Buttons, DetailContainer, Left, ProductCategory, ProductDetail, ProductImg, ProductName, ProductPrice, Right, SBoxBtn } from "./styles";
 
 function ItemDetail() {
 
@@ -35,15 +35,18 @@ function ItemDetail() {
           </ProductDetail>
           <ProductPrice>${price}</ProductPrice>
           {!cart ? (
-            
-              <ItemCount onAdd={onAdd} />
+              <SBoxBtn>
+               <ItemCount onAdd={onAdd} />
+              </SBoxBtn>
         
           ) : (
+            <SBoxBtn>
             <Buttons>
 				{btn.map(({name, to}) =>
 				<Button to={to}>{name}</Button>
 				)}
             </Buttons>
+            </SBoxBtn>
           )}
         </DetailContainer>
       </Right>
