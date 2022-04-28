@@ -1,28 +1,27 @@
 
-import Form from './Form';
 import React from 'react'
-import style from "../Checkout/Checkout.module.css"
-
 import { useForm } from '../../hooks/useForm';
-import Modal from './Modal';
+import Form from '../../components/form/Form';
+import { Overlay } from '../../components/Checkout/OverlayStyle';
 import { useCartContext } from '../../Context/CartContext';
-import {Overlay} from "./OverlayStyle";
+import Modal from '../../components/Checkout/Modal';
+import { SCheckoutContent } from './styles';
 
 
 function Checkout() {
 
   const { dataForm, errors, idOrder, isSubmit, handleChange, orderGenerator } = useForm();
 
-    const {deleteCart}= useCartContext()
+    const { deleteCart } = useCartContext()
 
 
-  return <>
+  return <SCheckoutContent>
       {(Object.keys(errors).length === 0 && isSubmit )? (
 
     (idOrder.length !== 0 )&& 
     <>
     <Overlay/>
-    <div className={style.modalContainer} onClick={deleteCart}>
+    <div  onClick={deleteCart}>
     <Modal idOrder={idOrder}  />
     </div>
     <Form orderGenerator={orderGenerator}
@@ -33,7 +32,8 @@ function Checkout() {
 
     ) : ( <Form orderGenerator={orderGenerator}
       handleChange={handleChange} dataForm={dataForm} errors={errors}/>)}
-      </>;
+      </SCheckoutContent>;
     }
 
 export default Checkout;
+

@@ -40,13 +40,13 @@ function ItemDetail() {
               </SBoxBtn>
         
           ) : (
-            <SBoxBtn>
+            
             <Buttons>
 				{btn.map(({name, to}) =>
 				<Button to={to}>{name}</Button>
 				)}
             </Buttons>
-            </SBoxBtn>
+           
           )}
         </DetailContainer>
       </Right>

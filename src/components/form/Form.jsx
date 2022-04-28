@@ -1,12 +1,13 @@
 import React from 'react'
-import style from "../Checkout/Checkout.module.css"
+
 import ItemsCart from '../../pages/cart/items-cart'
 import TotalAmount from '../../pages/cart/total-amount';
-
+import Button from '../button';
+import {ErrorMessage, FormBox, Headline, Input, Label, LeftSection, Line, RightSection, SForm} from "../form/styles"
 
 
 function Form({ handleChange, orderGenerator, dataForm,errors}) {
-
+/* 
   const error = errors === undefined ? {} : errors
 
   
@@ -25,204 +26,209 @@ function Form({ handleChange, orderGenerator, dataForm,errors}) {
     {label:"Documento", type : "text", defaultValue: `${dataForm.idCard}`},
     {label:"Fecha de nacimiento", type : "date", defaultValue: `${dataForm.birthDate}`}
   ] 
-
+ */
   return (
     <>
-        <form
-          className={style.columnSection}
+        <SForm
           onSubmit={orderGenerator}
           onChange={handleChange} >
 
-          <div className={style.divForm}>
-            <h2 className={style.userDetails}>Finalizar compra</h2>
-
-      {data.map(({ label, type, defaultValue, error, name}, index) => {
+          
+            <Headline>Finalizar compra</Headline>
+<Line/>
+      {/* {data.map(({ label, type, defaultValue, error, name}, index) => {
 
       return <label key={index}>{label}
-      <input type={type} name={name} defaultValue={defaultValue} className={style.field}/>
+      <Input type={type} name={name} defaultValue={defaultValue}/>
     <span>{error}</span>
        
       </label>
-      })} 
-
-            <label>
+      })}  */}
+<FormBox>
+<LeftSection>
+            <Label>
               Nombre *
-              <input
+              <Input
                 type="text"
                 name="name"
                 defaultValue={dataForm.name}
-                className={style.field}
+               
               />
-              <span className={style.error}>{errors.name}</span>
-            </label>
-            <label>
+              <ErrorMessage>{errors.name}</ErrorMessage>
+            </Label>
+            <Label>
               Apellido
-              <input
+              <Input
                 type="text"
                 name="lastName"
                 defaultValue={dataForm.lastName}
-                className={style.field}
+               
               />
-            </label>
-            <label>
+            </Label>
+            <Label>
               Telefono *
-              <input
-                className={style.field}
+              <Input
+               
                 type="text"
                 name="phone"
                 defaultValue={dataForm.phone}
               />
-              <span className={style.error}>{errors.phone}</span>
-            </label>
-            <label>
+              <ErrorMessage>{errors.phone}</ErrorMessage>
+            </Label>
+            <Label>
               Email *
-              <input
+              <Input
                 type="email"
                 name="email"
                 defaultValue={dataForm.email}
-                className={style.field}
+               
               />
-              <span className={style.error}>{errors.email}</span>
-            </label>
-            <label>
+              <ErrorMessage>{errors.email}</ErrorMessage>
+            </Label>
+            <Label>
               Confirmar email *
-              <input
-                className={style.field}
+              <Input
+               
                 type="email"
                 name="emailConfirmation"
                 defaultValue={dataForm.emailConfirmation}
               />
-              <span className={style.error}>{errors.emailConfirmation}</span>
-            </label>
-            <label>
+              <ErrorMessage>{errors.emailConfirmation}</ErrorMessage>
+            </Label>
+            <Label>
               Calle
-              <input
+              <Input
                 type="text"
                 name="street"
                 defaultValue={dataForm.street}
-                className={style.field}
+               
               />
-            </label>
-            <label>
+            </Label>
+            <Label>
               Altura
-              <input
+              <Input
                 type="text"
                 name="number"
                 defaultValue={dataForm.number}
-                className={style.field}
+               
               />
-            </label>
-            <label>
+            </Label>
+            <Label>
               {" "}
               Piso,departamento
-              <input
+              <Input
                 type="text"
                 name="apartament"
                 defaultValue={dataForm.apartament}
-                className={style.field}
+               
               />
-            </label>
-            <label>
+            </Label>
+            <Label>
               Localidad
-              <input
+              <Input
                 type="text"
                 name="location"
                 defaultValue={dataForm.location}
-                className={style.field}
+               
               />
-            </label>
-            <label>
+            </Label>
+            <Label>
               Provincia
-              <input
+              <Input
                 type="text"
                 name="province"
                 defaultValue={dataForm.province}
-                className={style.field}
+               
               />
-            </label>
-            <label>
+            </Label>
+            <Label>
               {" "}
               Código Postal
-              <input
+              <Input
                 type="text"
                 name="postalCode"
                 defaultValue={dataForm.postalCode}
-                className={style.field}
+               
               />
-            </label>
-            <label>
+            </Label>
+            <Label>
               {" "}
               Documento
-              <input
+              <Input
                 type="text"
                 name="idCard"
                 defaultValue={dataForm.idCard}
-                className={style.field}
+               
               />
-            </label>
-            <label>
+            </Label>
+            <Label>
               {" "}
               Fecha de nacimiento
-              <input
-                className={style.field}
+              <Input
+               
                 type="date"
                 name="birthDate"
                 defaultValue={dataForm.birthDate}
               />
-            </label>
-          </div> 
+            </Label>
+            </LeftSection>
 
-          <div className={style.rightColumn}>
+          
+          <RightSection>
             <h2>Tu pedido</h2>
             <ItemsCart />
-
-            <div className={style.shipping}>
-              <p>Envío</p>
-              <ul>
-                <li className='inputSend'>
-                  <input
-                    type="radio"
-                    name="shipping"
-                    defaultValue={dataForm.shipping}
-                  />
-                  <label className={style.shippingLabel}>
-                    Envío a domicilio - Andreani
-                  </label>
-                </li>
-                <li className='inputSend'>
-                  <input
-                    type="radio"
-                    name="shipping"
-                    defaultValue={dataForm.shipping}
-                  />
-                  <label className={style.shippingLabel}>
-                    Envío a sucursal - Andreani
-                  </label>
-                </li>
-                <li className='inputSend'>
-                  <input
-                    type="radio"
-                    name="shipping"
-                    defaultValue={dataForm.shipping}
-                  />
-                  <label className={style.shippingLabel}>
-                    Retiro por local
-                  </label>
-                </li>
-              </ul>
-            </div>
-
-            <div className="check">
+            <div >
               <TotalAmount/>
             </div>
-
-            <button className={style.btnBuy} >Realizar el pedido</button>
-          </div>
-        </form>
-      )
+            <Button to="/" >Realizar el pedido</Button>
+            </RightSection>
+            </FormBox>
+        </SForm>
+        
+      
     </>
   )
 }
 
 
 export default Form;
+
+
+
+
+
+ {/*  <div className={style.shipping}>
+              <p>Envío</p>
+              <ul>
+                <li className='inputSend'>
+                  <Input
+                    type="radio"
+                    name="shipping"
+                    defaultValue={dataForm.shipping}
+                  />
+                  <Label className={style.shippingLabel}>
+                    Envío a domicilio - Andreani
+                  </Label>
+                </li>
+                <li className='inputSend'>
+                  <Input
+                    type="radio"
+                    name="shipping"
+                    defaultValue={dataForm.shipping}
+                  />
+                  <Label className={style.shippingLabel}>
+                    Envío a sucursal - Andreani
+                  </Label>
+                </li>
+                <li className='inputSend'>
+                  <Input
+                    type="radio"
+                    name="shipping"
+                    defaultValue={dataForm.shipping}
+                  />
+                  <Label className={style.shippingLabel}>
+                    Retiro por local
+                  </Label>
+                </li>
+              </ul>
+            </div> */}

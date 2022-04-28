@@ -128,6 +128,6 @@ margin-right: ${space.md};
 cursor: pointer;
 transform: scale(1);
 :hover{
-	transform: scale(1.2);
+	transform: scale(1.1);
 }
 `
