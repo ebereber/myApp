@@ -1,40 +1,20 @@
-
-import "./ItemDetail.css";
-import ItemDetail from "./ItemDetail";
-import { useProduct } from "../Hooks/useProduct";
-import PropagateLoader from "react-spinners/PropagateLoader";
-import { css } from "@emotion/react";
+import ItemDetail from "./itemDetail/ItemDetail";
+import useListProducts from "../../hooks/useListProducts";
+import Spinner from "../spinner";
+import { ItemDetailContent } from "./styles";
 
 function ItemDetailContainer() {
-  
-  const {loading}= useProduct()
 
-  const override = css`
-  display: block;
-`;
-
+  const { loading } = useListProducts()
 
   return (
-    
-<div className="container-item">
-      {loading ? (
-        <div className="sweet-loading2">
-        <PropagateLoader
-          color="black"
-          loading={loading}
-          css={override}
-          size={15}
-        />
-      </div>
-      
-      ) : (
+    <ItemDetailContent>
+      {loading ? <Spinner/> : (
         <>
-        
           <ItemDetail />
-          </>
+        </>
       )}
-    
-    </div>
+    </ItemDetailContent>
   );
 }
 

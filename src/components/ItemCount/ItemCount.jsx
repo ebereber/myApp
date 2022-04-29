@@ -1,5 +1,4 @@
-import Counter from "./Counter";
-import "./ItemCount.css";
+import Counter from "./counter/Counter";
 
 function ItemCount({onAdd }) {
 

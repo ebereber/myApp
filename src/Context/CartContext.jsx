@@ -10,8 +10,8 @@ function CartContextProvider({ children }) {
   const [cartList, setCartList] = useState([]);
   const[ totalPrice, setTotalPrice] = useState(0)
 
-  const addToCart=(item)=> {
-    let itemCart = cartList.find((i) => i.id === item.id);
+  const addToCart = (item) => {
+    let itemCart = cartList.find( i => i.id === item.id);
     if (!itemCart) return setCartList([...cartList, item]);
     itemCart.quantity += item.quantity;
     setCartList([...cartList.filter((i) => i.id !== item.id), itemCart]);
