@@ -19,6 +19,7 @@ La app permite ver el catálogo, y navegar al  detalle del producto.
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [React Router](https://reactrouter.com/)
 - [Firebase](https://firebase.google.com/)
+- [Styled Components](https://styled-components.com/)
 
 ### Intalación
 
