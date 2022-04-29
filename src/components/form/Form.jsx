@@ -1,12 +1,16 @@
 import React from 'react'
+import { useCartContext } from '../../Context/CartContext';
 
 import ItemsCart from '../../pages/cart/items-cart'
 import TotalAmount from '../../pages/cart/total-amount';
 import Button from '../button';
-import {ErrorMessage, FormBox, Headline, Input, Label, LeftSection, Line, RightSection, SForm} from "../form/styles"
+import {Amount, Column, ErrorMessage, FormBox, Headline, Input, Label, LeftSection, RightSection, Row, SForm, SubmitButton, TotalDetailContainer, TotalTitle, UnitsRow, UnitsText} from "../form/styles"
+import CartUnits from '../Header/Cart/CartUnits';
 
 
 function Form({ handleChange, orderGenerator, dataForm,errors}) {
+
+  const { totalPrice } = useCartContext()
 /* 
   const error = errors === undefined ? {} : errors
 
@@ -34,8 +38,8 @@ function Form({ handleChange, orderGenerator, dataForm,errors}) {
           onChange={handleChange} >
 
           
-            <Headline>Finalizar compra</Headline>
-<Line/>
+           
+
       {/* {data.map(({ label, type, defaultValue, error, name}, index) => {
 
       return <label key={index}>{label}
@@ -46,6 +50,7 @@ function Form({ handleChange, orderGenerator, dataForm,errors}) {
       })}  */}
 <FormBox>
 <LeftSection>
+<Headline>Finalizar compra</Headline>
             <Label>
               Nombre *
               <Input
@@ -175,12 +180,25 @@ function Form({ handleChange, orderGenerator, dataForm,errors}) {
 
           
           <RightSection>
-            <h2>Tu pedido</h2>
+            <Headline>Tu pedido</Headline>
             <ItemsCart />
-            <div >
-              <TotalAmount/>
-            </div>
-            <Button to="/" >Realizar el pedido</Button>
+            
+            <TotalDetailContainer>
+              <Column>
+                <TotalTitle>Total</TotalTitle>
+                <UnitsRow>
+                  <CartUnits/>
+                  <UnitsText>unidades</UnitsText>
+              </UnitsRow>
+              </Column>
+              <Row>
+                <Amount>${totalPrice}</Amount>
+              </Row>
+              
+            </TotalDetailContainer>
+             
+            
+            <SubmitButton >Realizar el pedido</SubmitButton>
             </RightSection>
             </FormBox>
         </SForm>
@@ -192,43 +210,3 @@ function Form({ handleChange, orderGenerator, dataForm,errors}) {
 
 
 export default Form;
-
-
-
-
-
- {/*  <div className={style.shipping}>
-              <p>Envío</p>
-              <ul>
-                <li className='inputSend'>
-                  <Input
-                    type="radio"
-                    name="shipping"
-                    defaultValue={dataForm.shipping}
-                  />
-                  <Label className={style.shippingLabel}>
-                    Envío a domicilio - Andreani
-                  </Label>
-                </li>
-                <li className='inputSend'>
-                  <Input
-                    type="radio"
-                    name="shipping"
-                    defaultValue={dataForm.shipping}
-                  />
-                  <Label className={style.shippingLabel}>
-                    Envío a sucursal - Andreani
-                  </Label>
-                </li>
-                <li className='inputSend'>
-                  <Input
-                    type="radio"
-                    name="shipping"
-                    defaultValue={dataForm.shipping}
-                  />
-                  <Label className={style.shippingLabel}>
-                    Retiro por local
-                  </Label>
-                </li>
-              </ul>
-            </div> */}

@@ -25,6 +25,7 @@ left: 0;
 top: 0;
 background: ${({theme}) => theme.bg};
 z-index: ${zIndex.sticky};
+box-shadow: 0 4px 10px #00000014;
 `;
 
 export const SHeader = styled.header`

@@ -25,13 +25,12 @@ function Category() {
 export default Category;
 
 const Container = styled.aside`
-	grid-column: 1/2;
-	grid-row: 2/5;
+	grid-row: 1/10;
     display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: flex-start;
-   padding: 1rem;
+   
 ` ;
 const Title = styled.h3`
 	  display: inline-block;

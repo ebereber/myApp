@@ -3,20 +3,14 @@ import styled from 'styled-components';
 import { b, fontSizes, space } from '../../../styles/Variables';
 
 export const CardContainer = styled.div`
-height: 100%;
 width: 100%;
 min-width: 100px;
   color: ${({ theme }) => theme.text};
-  position: relative;
-  font-size: ${fontSizes.sm};
-  margin-bottom: ${space.xl};
-  @media ${b.md}{
-	  height: 300px;
-  }
+  font-size: ${fontSizes.xs};
+
 `
 export const Card = styled.div`
   width: 100%;
-  height: 100%;
   transform: scale(1);
   &:hover{
     transform: scale(1.01);
@@ -40,10 +34,11 @@ export const SHeading = styled.h3`
 	
 `
 export const SPrice = styled.span`
+font-weight: bold;
 	
 `;
 export const ProductImg = styled.img`
 width: 100%;
-height: 100%;
+height: auto;
 object-fit: contain;
 `

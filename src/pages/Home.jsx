@@ -8,7 +8,9 @@ function Home() {
     return (
         <Content>
             <Hero/>
-            <ItemListContainer/>
+          
+                <ItemListContainer/>
+            
         </Content>
     )
 }
@@ -17,21 +19,23 @@ export default Home
 
 
 export const Content = styled.div`
-	width: 100%;
+width: 100%;
 	height: 100%;
-	font-weight: 600;
     text-align: center;
     z-index: -1;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem),1fr));
-    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 12rem),1fr));
+    gap: 2rem 5rem;
 	padding: 0;
-	margin-bottom: ${space.xl};
     transition: 0.3s ease padding;
 	@media ${b.sm}{
 		padding: ${space.md};
 	}
 	@media ${b.md}{
 		padding: ${space.xl};
-	}
+	}`;
+	
+    export const GridItems = styled.div`
+    
     `
+    
