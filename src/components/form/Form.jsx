@@ -1,9 +1,6 @@
 import React from 'react'
 import { useCartContext } from '../../Context/CartContext';
-
 import ItemsCart from '../../pages/cart/items-cart'
-import TotalAmount from '../../pages/cart/total-amount';
-import Button from '../button';
 import {Amount, Column, ErrorMessage, FormBox, Headline, Input, Label, LeftSection, RightSection, Row, SForm, SubmitButton, TotalDetailContainer, TotalTitle, UnitsRow, UnitsText} from "../form/styles"
 import CartUnits from '../Header/Cart/CartUnits';
 
@@ -13,7 +10,6 @@ function Form({ handleChange, orderGenerator, dataForm,errors}) {
   const { totalPrice } = useCartContext()
 /* 
   const error = errors === undefined ? {} : errors
-
   
   const data = [
     {label:"Nombre *", name: "name", type : "text", defaultValue: `${dataForm.name}`, error : `${error.name}`},
@@ -36,9 +32,6 @@ function Form({ handleChange, orderGenerator, dataForm,errors}) {
         <SForm
           onSubmit={orderGenerator}
           onChange={handleChange} >
-
-          
-           
 
       {/* {data.map(({ label, type, defaultValue, error, name}, index) => {
 

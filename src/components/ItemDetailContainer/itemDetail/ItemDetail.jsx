@@ -1,14 +1,12 @@
 
 import { useState } from "react";
 import { useCartContext } from "../../../Context/CartContext";
-import { useProduct } from "../../../hooks/useProduct";
 import Button from "../../button";
 import ItemCount from "../../ItemCount/ItemCount";
 import { Buttons, DetailContainer, Left, ProductCategory, ProductDetail, ProductImg, ProductName, ProductPrice, Right, SBoxBtn } from "./styles";
 
-function ItemDetail() {
+function ItemDetail({ product }) {
 
-  const { product } = useProduct();
   const {pictureUrl, description, title, detail, price} = product
   const [cart, setCart] = useState(false);
   const { addToCart } = useCartContext();
@@ -42,8 +40,8 @@ function ItemDetail() {
           ) : (
             
             <Buttons>
-				{btn.map(({name, to}) =>
-				<Button to={to}>{name}</Button>
+				{btn.map(({name, to,}, index) =>
+				<Button key={index} to={to}>{name}</Button>
 				)}
             </Buttons>
            

@@ -1,12 +1,17 @@
 import React from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
+import useListProducts from "../../hooks/useListProducts";
 import { Banner, BannerContainer, BannerInfo, BoxBtn, Button, Heading, Image, Left, Right, SImg, Text } from "./styles";
 
 function Hero() {
-    
+  
+  const { products}  = useListProducts()
+
+ 
   return (
     <BannerContainer>
       <Banner>
+       
         <Left>
           <BannerInfo>
             

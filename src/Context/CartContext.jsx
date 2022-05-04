@@ -44,6 +44,7 @@ function CartContextProvider({ children }) {
   const deleteCart=()=> {
     setCartList([]);
   }
+  console.log(cartList);
 
   return (
     <CartContext.Provider

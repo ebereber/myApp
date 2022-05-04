@@ -5,7 +5,7 @@ import Button from '../components/button'
 function Nosotros() {
     return (
         <div>
-         <h2>holas</h2>
+         
         </div>
     )
 }

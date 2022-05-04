@@ -23,6 +23,8 @@ export const useForm = () => {
     birthDate: "",
     shipping: "",
   });
+  console.log(cartList);
+  console.log(totalPrice);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
