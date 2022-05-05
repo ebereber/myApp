@@ -16,15 +16,14 @@ La app permite ver el catálogo, y navegar al  detalle del producto.
 - [React Icons](https://react-icons.github.io/react-icons/)
 - [React Router](https://reactrouter.com/)
 - [Firebase](https://firebase.google.com/)
+- [Styled Components](https://styled-components.com/)
 
-### Intalación
+### Instalación
 
 En el directorio del proyecto se debe ingresar en la consola:
 ```
+ npm install
  npm run dev
 ```
 De esta forma se inicia en forma local y se puede acceder en http://localhost:3000 para verlo en el navegador.
 
-### Vista previa
-
-![](LemarElectricidad.png)

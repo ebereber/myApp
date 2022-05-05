@@ -1,12 +1,7 @@
-import React from 'react'
-import { ContainerNotFound } from './styles';
+import { ContainerNotFound } from './styles'
 
 function NotFound() {
-  return (
-    <ContainerNotFound>
-        <h2>hola</h2>
-    </ContainerNotFound>
-  )
+  return <ContainerNotFound></ContainerNotFound>
 }
 
-export default NotFound;
+export default NotFound

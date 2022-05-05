@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-export const SSpinner= styled.div`
+export const SSpinner = styled.div`
   width: 100vw;
   margin-top: 2rem;
   display: flex;
@@ -11,13 +11,13 @@ export const StyledSpinner = styled.svg`
   margin: -25px 0 0 -25px;
   width: 50px;
   height: 50px;
-  
+
   & .path {
     stroke: ${({ theme }) => theme.text};
     stroke-linecap: round;
     animation: dash 1.5s ease-in-out infinite;
   }
-  
+
   @keyframes rotate {
     100% {
       transform: rotate(360deg);
@@ -37,4 +37,4 @@ export const StyledSpinner = styled.svg`
       stroke-dashoffset: -124;
     }
   }
-`;
+`

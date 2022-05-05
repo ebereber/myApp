@@ -1,19 +1,18 @@
 import ItemList from './ItemList/ItemList'
-import useListProducts from '../../hooks/useListProducts';
-import Spinner from '../spinner';
+import useListProducts from '../../hooks/useListProducts'
+import Spinner from '../spinner'
 function ItemListContainer() {
-
-  const { products, loading, idCategoria}  = useListProducts()
+  const { products, loading } = useListProducts()
 
   return (
     <>
-      {loading ? 
-        <Spinner/>
-       : 
+      {loading ? (
+        <Spinner />
+      ) : (
         <>
           <ItemList products={products} />
         </>
-      }
+      )}
     </>
   )
 }
