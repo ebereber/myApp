@@ -1,24 +1,40 @@
 import styled from "styled-components";
+import { b, zIndex } from "../../styles/Variables";
 
 
 
 
 export const ModalWrapper=styled.div`
-    width: 550px;
-    height: 300px;
+    
+   width: 300px;
+   height: 500px;
     box-shadow: 0 5px 16px rgba(0,0,0,0.2);
-    display: flex;
+    
     position: relative; 
-    z-index: 67;
+    z-index: ${zIndex.modal};
     background: #fff;
+    display: flex;
+    flex-direction: column;
+    @media ${b.md}{
+        flex-direction: row;
+        width: 500px;
+   height: 300px;
+    }
     
 `;
+
+export const ImageContainer = styled.div`
+    height: 100%;
+    width: 100%;
+`
+
 export const ModalImage=styled.img`
     width: 100%;
     height: 100%;
-  
- 
 `;
+export const RightSection = styled.div`
+    
+`
 export const ModalButton=styled.button`
     cursor: pointer;
     position: absolute;
@@ -27,22 +43,28 @@ export const ModalButton=styled.button`
    margin: 3px 3px 0 0;
    background-color: transparent;
    border: none;
+   color:#fff;
    outline: none;
    transition: transform .2s;
    &:hover{
     transform: scale(1.2)
    }
+   @media ${b.md}{
+       color:#000
+   }
 `;
 
 export const Info=styled.div`
 width: 100%;
-grid-column: 2/3;
+
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-content: center;
 margin-left: 15px;
 margin-right: 15px;
+
+
 
 `;
 

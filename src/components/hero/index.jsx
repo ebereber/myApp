@@ -1,13 +1,14 @@
 import React from "react";
-import { BiRightArrowAlt } from "react-icons/bi";
 import useListProducts from "../../hooks/useListProducts";
-import { Banner, BannerContainer, BannerInfo, BoxBtn, Button, Heading, Image, Left, Right, SImg, Text } from "./styles";
+import { Banner, BannerContainer, BannerInfo, BoxBtn, Heading, Image, Left, Right, SButton, SImg, Text } from "./styles";
 
 function Hero() {
   
-  const { products}  = useListProducts()
+  const {products} = useListProducts()
+  if(!products.length) return null
+  
+  const heroProd = products[2]
 
- 
   return (
     <BannerContainer>
       <Banner>
@@ -15,18 +16,18 @@ function Hero() {
         <Left>
           <BannerInfo>
             
-			<Heading>Mi Smart LED Desk Lamp Pro</Heading>
+            
+			<Heading> {heroProd.title}  </Heading>
 			<Text>
-			La nueva lámpara de escritorio que presenta una apariencia simple.
+			La nueva lámpara que presenta una apariencia simple.
               Admite una variedad de cambios de iluminación. Ángulo de luz
               ajustable, igual que la temperatura del color y el brillo, que
               brindan una mejor experiencia de iluminación.
 			</Text>
       <BoxBtn>
-            <Button>
-              Cómo funciona?
-              <BiRightArrowAlt />
-            </Button>
+            <SButton to={`/detalle/${heroProd.id}`}>
+              Cómo funciona ?
+            </SButton>
             </BoxBtn>
           </BannerInfo>
         </Left>
@@ -34,7 +35,7 @@ function Hero() {
         <Right>
           <Image>
             <SImg
-              src='https://www.darklightdesign.com/Media/6897/Seed-Design-Damo-D-Table-Lamp-1.jpg?anchor=center&mode=crop&width=1060&height=1060&rnd=131876945980000000'
+              src={heroProd.pictureUrl}
               alt=''
             />
           </Image>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Navigate } from 'react-router-dom';
 import { useCartContext } from '../../Context/CartContext';
 import ItemsCart from '../../pages/cart/items-cart'
 import {Amount, Column, ErrorMessage, FormBox, Headline, Input, Label, LeftSection, RightSection, Row, SForm, SubmitButton, TotalDetailContainer, TotalTitle, UnitsRow, UnitsText} from "../form/styles"
@@ -7,16 +8,16 @@ import CartUnits from '../Header/Cart/CartUnits';
 
 function Form({ handleChange, orderGenerator, dataForm,errors}) {
 
-  const { totalPrice } = useCartContext()
-/* 
-  const error = errors === undefined ? {} : errors
+  const { cartList, totalPrice } = useCartContext()
+ 
+if(cartList.length === 0 ) return <Navigate to="/" />
   
-  const data = [
-    {label:"Nombre *", name: "name", type : "text", defaultValue: `${dataForm.name}`, error : `${error.name}`},
+  /* const data = [
+    {label:"Nombre *", name: "name", type : "text", defaultValue: `${dataForm.name}`, error : `${errors.name}`},
     {label:"Apellido", type : "text", defaultValue: `${dataForm.lastName}`},
-    {label:"Telefono *", name: "phone", type : "text", defaultValue: `${dataForm.phone}`, error : `${error.phone}`},
-    {label:"Email *", name: "email", type : "email", defaultValue: `${dataForm.email}`,error : `${error.email}`},
-    {label:"Confirmar email *",  name:"emailConfirmation", type : "email", defaultValue: `${dataForm.emailConfirmation}`, error : `${error.emailConfirmation}`},
+    {label:"Telefono *", name: "phone", type : "text", defaultValue: `${dataForm.phone}`, error : `${errors.phone}`},
+    {label:"Email *", name: "email", type : "email", defaultValue: `${dataForm.email}`,error : `${errors.email}`},
+    {label:"Confirmar email *",  name:"emailConfirmation", type : "email", defaultValue: `${dataForm.emailConfirmation}`, error : `${errors.emailConfirmation}`},
     {label:"Calle", type : "text", defaultValue: `${dataForm.street}`},
     {label:"Altura", type : "text", defaultValue: `${dataForm.number}`},
     {label:"Piso, departamento", type : "text", defaultValue: `${dataForm.apartament}`},
@@ -25,23 +26,25 @@ function Form({ handleChange, orderGenerator, dataForm,errors}) {
     {label:"Código Postal", type : "text", defaultValue: `${dataForm.postalCode}`},
     {label:"Documento", type : "text", defaultValue: `${dataForm.idCard}`},
     {label:"Fecha de nacimiento", type : "date", defaultValue: `${dataForm.birthDate}`}
-  ] 
- */
+  ]  */
+ 
   return (
     <>
         <SForm
           onSubmit={orderGenerator}
           onChange={handleChange} >
+            
 
-      {/* {data.map(({ label, type, defaultValue, error, name}, index) => {
+       {/* {data.map(({ label, type, defaultValue, error, name}, index) => {
 
       return <label key={index}>{label}
       <Input type={type} name={name} defaultValue={defaultValue}/>
     <span>{error}</span>
        
       </label>
-      })}  */}
-<FormBox>
+      
+      })}   */}
+ <FormBox>
 <LeftSection>
 <Headline>Finalizar compra</Headline>
             <Label>
@@ -193,7 +196,7 @@ function Form({ handleChange, orderGenerator, dataForm,errors}) {
             
             <SubmitButton >Realizar el pedido</SubmitButton>
             </RightSection>
-            </FormBox>
+            </FormBox> 
         </SForm>
         
       

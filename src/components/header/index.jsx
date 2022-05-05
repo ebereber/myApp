@@ -3,7 +3,7 @@ import {useState} from 'react'
 import { FiSun, FiMoon } from 'react-icons/fi'
 
 import Nav from './Nav/Nav';
-import CartWidget from './Cart/CartWidget';
+import CartWidget from "./Cart/cartWidget/CartWidget"
 import { useContext } from 'react';
 import { ThemeContext } from '../../App';
 import { CloseMenuIcon, HeaderSticky, Left, Logo, Menu, MenuIcon, MenuToggleButton, Right, SHeader, ThemeButton } from './styles';
@@ -32,7 +32,7 @@ function Header() {
       <HeaderSticky>
         <SHeader>
 			<Left>
-				<Logo to='/'>Lemar Electricidad</Logo>
+				<Logo to='/'>Dash Iluminacion</Logo>
 			</Left>
 			<Right>
 				<Nav menuToggler={menuToggler}/>

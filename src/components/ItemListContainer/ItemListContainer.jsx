@@ -1,4 +1,4 @@
-import ItemList from '../ItemListContainer/ItemList/ItemList'
+import ItemList from './ItemList/ItemList'
 import useListProducts from '../../hooks/useListProducts';
 import Spinner from '../spinner';
 function ItemListContainer() {

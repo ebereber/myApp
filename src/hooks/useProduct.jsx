@@ -16,6 +16,6 @@ export const useProduct = () => {
       .finally(() => setLoading(false));
   }, [id]);
 
-  return { product, loading };
+  return { product, loading, id };
 };
  

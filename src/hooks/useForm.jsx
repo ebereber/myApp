@@ -1,12 +1,14 @@
 import {useState} from "react"
 import { addDoc, collection, getFirestore, Timestamp} from "firebase/firestore";
-import { useCartContext } from "../context/CartContext";
+import { useCartContext } from "../Context/CartContext";
+
 
 export const useForm = () => {
-  const { cartList, totalPrice } = useCartContext();
+ const { cartList, totalPrice } = useCartContext()
   const [idOrder, setIdOrder] = useState("");
   const [errors, setErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const [loading, setLoading] = useState(true)
   const [dataForm, setDataForm] = useState({
     name: "",
     lastName: "",
@@ -23,9 +25,7 @@ export const useForm = () => {
     birthDate: "",
     shipping: "",
   });
-  console.log(cartList);
-  console.log(totalPrice);
-
+ 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setDataForm({
@@ -56,7 +56,9 @@ export const useForm = () => {
     const orderCollection = collection(db, "orders");
     addDoc(orderCollection, order)
       .then((res) => setIdOrder(res.id))
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err))
+      .finally(() => setLoading(false))
+      
   };
 
   const validate = (values) => {
@@ -82,6 +84,7 @@ export const useForm = () => {
     return error;
   };
 
+
   return {
     dataForm,
     idOrder,
@@ -89,5 +92,6 @@ export const useForm = () => {
     isSubmit,
     handleChange,
     orderGenerator,
+    loading
   };
 };

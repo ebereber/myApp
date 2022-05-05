@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { b, fontSizes, space } from "../../styles/Variables";
+import Button from "../button";
 
 export const BannerContainer = styled.div`
 grid-column: 1;
@@ -71,33 +73,20 @@ width: 90%;
 
 	
 `;
-/* const Title = styled.h1`
-text-align: justify;
-margin-bottom: 16px;
-	
-`; */
 
-export const Button = styled.button`
-	min-width:112px ;
-	max-width: 220px;
-	color: #fff;;
-	background: #050A10;
-	border: 1px solid white;
-	outline: none;
-	padding: .8rem;
-	font-weight: bold;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	cursor: pointer;
-	transform: scaleX(1);
+
+export const SButton = styled(Button)`
+background-color: #000;
+border: 1px solid #fff;
+margin-top: 0;
+@media ${b.md}{
+	margin-top: 1rem;
+}
+:hover{
+	background-color: #000;
+}
+
 	
-	:hover{
-		transform: scale(1.01);
-	}
-	@media ${b.sm}{
-		
-	}
 `
 
 export const Right = styled.div`
@@ -126,9 +115,12 @@ object-fit: cover;
 export const BoxBtn = styled.div`
 display: flex;
 justify-content: center;
+align-items: center;
 margin-top: .5rem;
 @media ${b.sm}{
 	justify-content: flex-start;
 	margin-top: 0;
 }
+
 `
+

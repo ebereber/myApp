@@ -33,7 +33,7 @@ function Footer() {
         </FooterNewsletter>
         <SBox>
         <FooterContent>
-          <Logo>Lemar Electricidad</Logo>
+          <Logo>Dash Iluminacion</Logo>
           {footertColums.map(({ id, headline, links }) => (
             <FooterContentColumn key={id}>
               <FooterContentHeadline>{headline}</FooterContentHeadline>

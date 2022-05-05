@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { b, fontSizes, space, } from "../../styles/Variables";
-import Button from "../button";
 
 export const SForm = styled.form`
     width: 100%;
@@ -8,6 +7,7 @@ export const SForm = styled.form`
     padding: ${space.sm} ${space.lg};
     color:${({theme}) => theme.text};
     font-size: ${fontSizes.xs};
+    margin-bottom: 2rem;
     
 `
 export const FormBox = styled.div`
@@ -26,8 +26,8 @@ margin-top: .5rem;
 export const LeftSection = styled.div`
     
     display: grid;
-    grid-template-columns: repeat(2, minmax(200px, 1fr));
-    /* grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem),1fr)); */
+    /* grid-template-columns: repeat(2, minmax(200px, 1fr)); */
+     grid-template-columns: repeat(auto-fill, minmax(min(15rem, 20rem),1fr)); 
     gap: 1.5rem;
 `
 export const RightSection = styled.div`
