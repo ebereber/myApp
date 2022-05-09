@@ -2,7 +2,7 @@
 E-commerce desarrollado en React para fábrica de luminarias.
 
 ## Link:
-- [Lemar Electricidad](https://lemarelectricidad.netlify.app/)
+- [Dash Iluminación](https://dashh.netlify.app/)
 
 ### Navegacion
 - Home con productos.
