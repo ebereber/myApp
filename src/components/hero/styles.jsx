@@ -62,7 +62,6 @@ export const BannerInfo = styled.div`
     margin: auto;
   }
 `
-
 export const SButton = styled(Button)`
   background-color: #000;
   border: 1px solid #fff;
@@ -74,7 +73,6 @@ export const SButton = styled(Button)`
     background-color: #000;
   }
 `
-
 export const Right = styled.div`
   width: 100%;
   height: 60%;

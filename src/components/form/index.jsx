@@ -2,6 +2,7 @@ import React from 'react'
 import { Navigate } from 'react-router-dom'
 import { useCartContext } from '../../Context/CartContext'
 import ItemsCart from '../../pages/cart/items-cart'
+import CartUnits from '../Cart/CartUnits'
 import {
   Amount,
   Column,
@@ -20,7 +21,6 @@ import {
   UnitsRow,
   UnitsText,
 } from '../form/styles'
-import CartUnits from '../Header/Cart/CartUnits'
 
 function Form({ handleChange, orderGenerator, dataForm, errors }) {
   const { cartList, totalPrice } = useCartContext()

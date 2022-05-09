@@ -1,5 +1,5 @@
 import React from 'react'
-import CartUnits from '../../../components/Header/Cart/CartUnits'
+import CartUnits from '../../../components/Cart/CartUnits'
 import { useCartContext } from '../../../Context/CartContext'
 import {
   Checkout,
