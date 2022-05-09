@@ -7,7 +7,6 @@ export const FooterContainer = styled.div`
   background: ${({ theme }) => theme.bg};
   color: ${({ theme }) => theme.text};
   border-top: 1px solid ${({ theme }) => theme.text};
-  
 `
 
 export const SFooter = styled.footer`
@@ -23,7 +22,6 @@ export const SFooter = styled.footer`
   margin: 0 auto;
   @media ${b.md} {
     max-width: calc(100% - 80px);
-
   }
 `
 
@@ -89,13 +87,12 @@ export const FooterContent = styled.div`
   }
 `
 export const SBox = styled.div`
-width: 100%;
-display: flex;
-justify-content: center;
-@media ${b.sm}{
+  width: 100%;
+  display: flex;
   justify-content: center;
-  
-}
+  @media ${b.sm} {
+    justify-content: center;
+  }
 `
 export const FooterContentColumn = styled.div`
   display: flex;
@@ -104,20 +101,19 @@ export const FooterContentColumn = styled.div`
   text-align: start;
 `
 export const FooterContentHeadline = styled.h3`
-margin-bottom: ${space.md};
+  margin-bottom: ${space.md};
 `
-export const SUl = styled.ul`
-`
+export const SUl = styled.ul``
 export const SLi = styled.li`
-margin-bottom: ${space.sm};
+  margin-bottom: ${space.sm};
 `
 export const SLink = styled(Link)`
-text-decoration:none;
-color: inherit;
-transition: color .2s ease;
-&:hover{
-	opacity: .5;
-}
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+  &:hover {
+    opacity: 0.5;
+  }
 `
 
 //BASEFOOTER
@@ -126,16 +122,16 @@ export const Logo = styled.h3`
 `
 
 export const BaseFooter = styled.div`
-font-size: ${fontSizes.xs};
+  font-size: ${fontSizes.xs};
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: flex-end;
- 
-  
+
   border-top: 1px solid ${({ theme }) => theme.text};
 `
 
 export const FooterYear = styled.span`
- padding: ${space.sm};`
+  padding: ${space.sm};
+`
 export const Socials = styled.div``

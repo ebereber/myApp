@@ -1,21 +1,22 @@
-import ItemDetail from "./itemDetail/ItemDetail";
-import useListProducts from "../../hooks/useListProducts";
-import Spinner from "../spinner";
-import { ItemDetailContent } from "./styles";
+import ItemDetail from './itemDetail/ItemDetail'
+import Spinner from '../spinner'
+import { ItemDetailContent } from './styles'
+import { useProduct } from '../../hooks/useProduct'
 
 function ItemDetailContainer() {
-
-  const { loading } = useListProducts()
+  const { product, loading } = useProduct()
 
   return (
     <ItemDetailContent>
-      {loading ? <Spinner/> : (
+      {loading ? (
+        <Spinner />
+      ) : (
         <>
-          <ItemDetail />
+          <ItemDetail product={product} key={product.id} />
         </>
       )}
     </ItemDetailContent>
-  );
+  )
 }
 
-export default ItemDetailContainer;
+export default ItemDetailContainer

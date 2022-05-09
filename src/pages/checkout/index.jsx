@@ -1,39 +1,37 @@
-
 import React from 'react'
-import { useForm } from '../../hooks/useForm';
-import Form from '../../components/form/Form';
-import { Overlay } from '../../components/Checkout/OverlayStyle';
-import { useCartContext } from '../../Context/CartContext';
-import Modal from '../../components/Checkout/Modal';
-import { SCheckoutContent } from './styles';
-
+import { useForm } from '../../hooks/useForm'
+import { SCheckoutContent } from './styles'
+import Spinner from '../../components/spinner'
+import Modal from '../../components/modal'
+import { Overlay } from '../../components/modal/OverlayStyle'
+import Form from '../../components/form'
 
 function Checkout() {
+  const { dataForm, errors, idOrder, isSubmit, handleChange, orderGenerator, loading } = useForm()
 
-  const { dataForm, errors, idOrder, isSubmit, handleChange, orderGenerator } = useForm();
+  return (
+    <SCheckoutContent>
+      {Object.keys(errors).length === 0 && isSubmit ? (
+        loading ? (
+          <Spinner />
+        ) : (
+          idOrder.length !== 0 && (
+            <>
+              <Overlay />
+              <Modal idOrder={idOrder} />
+            </>
+          )
+        )
+      ) : (
+        <Form
+          orderGenerator={orderGenerator}
+          handleChange={handleChange}
+          dataForm={dataForm}
+          errors={errors}
+        />
+      )}
+    </SCheckoutContent>
+  )
+}
 
-    const { deleteCart } = useCartContext()
-
-
-  return <SCheckoutContent>
-      {(Object.keys(errors).length === 0 && isSubmit )? (
-
-    (idOrder.length !== 0 )&& 
-    <>
-    <Overlay/>
-    <div  onClick={deleteCart}>
-    <Modal idOrder={idOrder}  />
-    </div>
-    <Form orderGenerator={orderGenerator}
-      handleChange={handleChange} dataForm={dataForm} errors={errors}/>
-    </>
-
-
-
-    ) : ( <Form orderGenerator={orderGenerator}
-      handleChange={handleChange} dataForm={dataForm} errors={errors}/>)}
-      </SCheckoutContent>;
-    }
-
-export default Checkout;
-
+export default Checkout

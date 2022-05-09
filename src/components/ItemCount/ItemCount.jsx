@@ -1,9 +1,7 @@
-import Counter from "./counter/Counter";
+import Counter from './counter/Counter'
 
-function ItemCount({onAdd }) {
-
-  return <Counter  
-          onAdd={onAdd} />;
+function ItemCount({ onAdd }) {
+  return <Counter onAdd={onAdd} />
 }
 
-export default ItemCount;
+export default ItemCount

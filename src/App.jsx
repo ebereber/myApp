@@ -11,15 +11,15 @@ function App() {
   const [theme, setTheme] = useState('light')
 
   const themeToggler = () => {
-	  theme === "light" ? setTheme("dark") : setTheme("light")
-  } 
+    theme === 'light' ? setTheme('dark') : setTheme('light')
+  }
 
   return (
-    <ThemeContext.Provider value={{theme, setTheme}}>
-      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
         <GlobalStyles />
         <CartContextProvider>
-            <AppRouter />
+          <AppRouter />
         </CartContextProvider>
       </ThemeProvider>
     </ThemeContext.Provider>
